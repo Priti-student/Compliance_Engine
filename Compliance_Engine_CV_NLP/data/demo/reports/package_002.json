@@ -1,0 +1,433 @@
+{
+  "status": "ok",
+  "message": "",
+  "compliance_status": "non_compliant",
+  "scan": {
+    "status": "ok",
+    "message": "",
+    "image_width": 291,
+    "image_height": 496,
+    "quality": {
+      "is_usable": true,
+      "width": 291,
+      "height": 496,
+      "channels": 3,
+      "blur_variance": 8902.61,
+      "brightness_mean": 162.58,
+      "darkness_ratio": 0.071,
+      "glare_ratio": 0.0096,
+      "warnings": []
+    },
+    "preprocessing": {
+      "transforms_applied": [
+        "CLAHE",
+        "denoise"
+      ],
+      "deskew_angle": 0.0,
+      "perspective_rectified": false
+    },
+    "zones": [
+      {
+        "zone_type": "mrp_block",
+        "bbox": [
+          136,
+          183,
+          97,
+          26
+        ],
+        "text": "mar\n&\n68.00",
+        "confidence": 54.67,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "mar",
+            "confidence": 68.0,
+            "bbox": [
+              17,
+              14,
+              22,
+              24
+            ]
+          },
+          {
+            "text": "&",
+            "confidence": 0.0,
+            "bbox": [
+              47,
+              12,
+              5,
+              26
+            ]
+          },
+          {
+            "text": "68.00",
+            "confidence": 96.0,
+            "bbox": [
+              53,
+              10,
+              50,
+              28
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "manufacturer_address_block",
+        "bbox": [
+          110,
+          319,
+          104,
+          33
+        ],
+        "text": "Manufactured\nby:\nGujarat\nCo-operative\nMilk",
+        "confidence": 85.4,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "Manufactured",
+            "confidence": 95.0,
+            "bbox": [
+              6,
+              18,
+              76,
+              11
+            ]
+          },
+          {
+            "text": "by:",
+            "confidence": 96.0,
+            "bbox": [
+              86,
+              18,
+              16,
+              13
+            ]
+          },
+          {
+            "text": "Gujarat",
+            "confidence": 68.0,
+            "bbox": [
+              5,
+              34,
+              30,
+              11
+            ]
+          },
+          {
+            "text": "Co-operative",
+            "confidence": 93.0,
+            "bbox": [
+              38,
+              34,
+              52,
+              11
+            ]
+          },
+          {
+            "text": "Milk",
+            "confidence": 75.0,
+            "bbox": [
+              93,
+              33,
+              23,
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "fssai_block",
+        "bbox": [
+          69,
+          416,
+          161,
+          21
+        ],
+        "text": "+\ntie.\nNo.10012021000071",
+        "confidence": 38.67,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "+",
+            "confidence": 24.0,
+            "bbox": [
+              0,
+              0,
+              11,
+              22
+            ]
+          },
+          {
+            "text": "tie.",
+            "confidence": 55.0,
+            "bbox": [
+              33,
+              15,
+              17,
+              12
+            ]
+          },
+          {
+            "text": "No.10012021000071",
+            "confidence": 37.0,
+            "bbox": [
+              54,
+              0,
+              112,
+              27
+            ]
+          }
+        ]
+      }
+    ],
+    "full_image_ocr": {
+      "text": "/(\nAmul\nTaaza\nHOMOGENSED\nTONED\nMILK\n>\n|\nmre\n=\n68.00\nDP\nme\ndienes\n(Be\nBor\nM240805,\nie\nad\nfl\nManufactured\nby:\nay\nSssai\ni\nLic.\nNo.\n1012021000071\n\u2018inva",
+      "mean_confidence": 47.52,
+      "word_count": 29
+    },
+    "warnings": []
+  },
+  "calibration": {
+    "method": "none",
+    "mm_per_px": 0.0,
+    "barcode_type": "",
+    "barcode_value": "",
+    "barcode_bbox": [],
+    "reference_width_mm": 0.0,
+    "reference_width_px": 0.0,
+    "notes": "No barcode found; mm-based checks will require manual calibration."
+  },
+  "font_metrics": [
+    {
+      "zone_type": "mrp_block",
+      "char_height_px_median": 11.0,
+      "char_height_px_min": 3.0,
+      "char_height_px_max": 14.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 8.39,
+      "uppercase_ratio": 0.0,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "manufacturer_address_block",
+      "char_height_px_median": 8.0,
+      "char_height_px_min": 7.0,
+      "char_height_px_max": 13.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 7.21,
+      "uppercase_ratio": 0.111,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "fssai_block",
+      "char_height_px_median": 12.0,
+      "char_height_px_min": 2.0,
+      "char_height_px_max": 21.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 7.22,
+      "uppercase_ratio": 0.2,
+      "calibrated": false,
+      "warnings": []
+    }
+  ],
+  "declarations": [
+    {
+      "field_name": "manufacturer_packer_importer",
+      "value": "",
+      "raw_text": "/( Amul Taaza HOMOGENSED TONED MILK > | mre = 68.00 DP me dienes (Be Bor M240805, ie ad fl Manufactured by: ay Sssai i Lic. No. 1012021000071 \u2018inva",
+      "confidence": 0.3,
+      "method": "heuristic",
+      "source_zone": "manufacturer_address_block",
+      "qualifiers": [],
+      "rule_id": ""
+    },
+    {
+      "field_name": "generic_name_of_commodity",
+      "value": "Milk",
+      "raw_text": "/( Amul Taaza HOMOGENSED TONED MILK > | mre = 68.00 DP me dienes (Be Bor M240805, ie ad fl Manufactured by: ay Sssai i Lic. No. 1012021000071 \u2018inva",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-02"
+    },
+    {
+      "field_name": "mrp",
+      "value": "68.00",
+      "raw_text": "/( Amul Taaza HOMOGENSED TONED MILK > | mre = 68.00 DP me dienes (Be Bor M240805, ie ad fl Manufactured by: ay Sssai i Lic. No. 1012021000071 \u2018inva",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "MD-01",
+      "rule_reference": "Rule 6(1)(a)",
+      "field_name": "manufacturer_packer_importer",
+      "status": "non_compliant",
+      "severity": "medium",
+      "reason": "Manufacturer block present but no resolvable address evidence",
+      "evidence": {
+        "block_text": "/( Amul Taaza HOMOGENSED TONED MILK > | mre = 68.00 DP me dienes (Be Bor M240805, ie ad fl Manufactured by: ay Sssai i Lic. No. 1012021000071 \u2018inva"
+      }
+    },
+    {
+      "rule_id": "MD-03",
+      "rule_reference": "Rule 6(1)(c)",
+      "field_name": "net_quantity",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: net_quantity",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-04",
+      "rule_reference": "Rule 6(1)(d)",
+      "field_name": "month_year_of_manufacture",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: month_year_of_manufacture",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-05",
+      "rule_reference": "Rule 6(1)(e) read with Rule 2(m)",
+      "field_name": "mrp",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "MRP 'inclusive of all taxes' qualifier not visible in OCR; verify on the physical label",
+      "evidence": {
+        "value": "68.00"
+      }
+    },
+    {
+      "rule_id": "MD-06",
+      "rule_reference": "Rule 6(1)(f)",
+      "field_name": "dimensions",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'product_category in ['textiles','bedsheets','sarees','towels']' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-07",
+      "rule_reference": "Rule 6(2)",
+      "field_name": "consumer_care_details",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: consumer_care_details",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-08",
+      "rule_reference": "Rule 6 (expanded, post-2017 amendment)",
+      "field_name": "country_of_origin",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'package_flagged_as_imported == true' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-09",
+      "rule_reference": "Rule 6(1), sub-rule extended by 2017 amendment (effective 01-01-2018)",
+      "field_name": "ecommerce_declarations",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "N/A for physical package scan (e-commerce listing rule)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-10",
+      "rule_reference": "Rule 6(11) (as introduced by LMPC (Amendment) Rules, 2021/2022)",
+      "field_name": "unit_sale_price",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Unit sale price not detected; requirement is effective-date sensitive (LMPC 2021-2023 amendments) - verify or pass enforce_unit_sale_price",
+      "evidence": {}
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 11.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 8.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 12.0
+      }
+    },
+    {
+      "rule_id": "PL-02",
+      "rule_reference": "Rule 8(1)(a)-(b)",
+      "field_name": "Clear space around net quantity declaration",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Clear space around net quantity declaration)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-03",
+      "rule_reference": "Rule 9(1)(a)-(b)",
+      "field_name": "Legible, prominent, contrasting declarations",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Legible, prominent, contrasting declarations)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-04",
+      "rule_reference": "Rule 9(2)",
+      "field_name": "No declaration readable only through liquid",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (No declaration readable only through liquid)",
+      "evidence": {}
+    }
+  ],
+  "stats": {
+    "total_checks": 15,
+    "compliant": 0,
+    "non_compliant": 1,
+    "missing": 3,
+    "needs_review": 8,
+    "not_applicable": 3
+  },
+  "warnings": [],
+  "advice": []
+}

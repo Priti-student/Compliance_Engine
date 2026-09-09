@@ -1,0 +1,568 @@
+{
+  "status": "ok",
+  "message": "",
+  "compliance_status": "non_compliant",
+  "scan": {
+    "status": "ok",
+    "message": "",
+    "image_width": 1252,
+    "image_height": 860,
+    "quality": {
+      "is_usable": true,
+      "width": 1252,
+      "height": 860,
+      "channels": 3,
+      "blur_variance": 1494.54,
+      "brightness_mean": 179.02,
+      "darkness_ratio": 0.1091,
+      "glare_ratio": 0.2007,
+      "warnings": []
+    },
+    "preprocessing": {
+      "transforms_applied": [
+        "CLAHE",
+        "denoise"
+      ],
+      "deskew_angle": 0.0,
+      "perspective_rectified": false
+    },
+    "zones": [
+      {
+        "zone_type": "manufacturer_address_block",
+        "bbox": [
+          511,
+          76,
+          624,
+          63
+        ],
+        "text": "|\n[ely\n\\\nManufactured\n&\nPacked\nby:\nNutritional\nInformation",
+        "confidence": 75.22,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "|",
+            "confidence": 83.0,
+            "bbox": [
+              415,
+              0,
+              2,
+              25
+            ]
+          },
+          {
+            "text": "[ely",
+            "confidence": 66.0,
+            "bbox": [
+              6,
+              0,
+              85,
+              75
+            ]
+          },
+          {
+            "text": "\\",
+            "confidence": 76.0,
+            "bbox": [
+              146,
+              0,
+              33,
+              75
+            ]
+          },
+          {
+            "text": "Manufactured",
+            "confidence": 1.0,
+            "bbox": [
+              196,
+              47,
+              162,
+              28
+            ]
+          },
+          {
+            "text": "&",
+            "confidence": 88.0,
+            "bbox": [
+              296,
+              43,
+              8,
+              32
+            ]
+          },
+          {
+            "text": "Packed",
+            "confidence": 96.0,
+            "bbox": [
+              314,
+              47,
+              44,
+              28
+            ]
+          },
+          {
+            "text": "by:",
+            "confidence": 96.0,
+            "bbox": [
+              362,
+              48,
+              20,
+              15
+            ]
+          },
+          {
+            "text": "Nutritional",
+            "confidence": 96.0,
+            "bbox": [
+              464,
+              46,
+              78,
+              29
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "consumer_care_block",
+        "bbox": [
+          698,
+          265,
+          457,
+          36
+        ],
+        "text": "SUNTISS\nFOOGS\nFvt.\nLtd.\n\u2014\u2014\n\u2014\nToll\nFree:\n1800\n123\n4567\n1029\n|\nEmail::care@sunrisefoods.in",
+        "confidence": 57.93,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "SUNTISS",
+            "confidence": 20.0,
+            "bbox": [
+              6,
+              0,
+              46,
+              17
+            ]
+          },
+          {
+            "text": "FOOGS",
+            "confidence": 55.0,
+            "bbox": [
+              57,
+              0,
+              30,
+              17
+            ]
+          },
+          {
+            "text": "Fvt.",
+            "confidence": 32.0,
+            "bbox": [
+              92,
+              0,
+              24,
+              17
+            ]
+          },
+          {
+            "text": "Ltd.",
+            "confidence": 52.0,
+            "bbox": [
+              119,
+              0,
+              21,
+              17
+            ]
+          },
+          {
+            "text": "\u2014\u2014",
+            "confidence": 42.0,
+            "bbox": [
+              289,
+              0,
+              18,
+              1
+            ]
+          },
+          {
+            "text": "\u2014",
+            "confidence": 72.0,
+            "bbox": [
+              435,
+              0,
+              26,
+              5
+            ]
+          },
+          {
+            "text": "Toll",
+            "confidence": 96.0,
+            "bbox": [
+              10,
+              14,
+              20,
+              14
+            ]
+          },
+          {
+            "text": "Free:",
+            "confidence": 96.0,
+            "bbox": [
+              34,
+              15,
+              28,
+              13
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "mrp_block",
+        "bbox": [
+          77,
+          601,
+          1030,
+          131
+        ],
+        "text": "(ss\nat\na\nee\n|\n7\ni)\n\u2014s\n.",
+        "confidence": 23.56,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "(ss",
+            "confidence": 23.0,
+            "bbox": [
+              0,
+              0,
+              94,
+              143
+            ]
+          },
+          {
+            "text": "at",
+            "confidence": 15.0,
+            "bbox": [
+              71,
+              0,
+              271,
+              143
+            ]
+          },
+          {
+            "text": "a",
+            "confidence": 24.0,
+            "bbox": [
+              252,
+              59,
+              61,
+              71
+            ]
+          },
+          {
+            "text": "ee",
+            "confidence": 16.0,
+            "bbox": [
+              318,
+              11,
+              189,
+              132
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 90.0,
+            "bbox": [
+              601,
+              0,
+              8,
+              112
+            ]
+          },
+          {
+            "text": "7",
+            "confidence": 18.0,
+            "bbox": [
+              630,
+              0,
+              43,
+              143
+            ]
+          },
+          {
+            "text": "i)",
+            "confidence": 26.0,
+            "bbox": [
+              671,
+              0,
+              161,
+              143
+            ]
+          },
+          {
+            "text": "\u2014s",
+            "confidence": 0.0,
+            "bbox": [
+              901,
+              5,
+              84,
+              120
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "mfg_date_block",
+        "bbox": [
+          101,
+          771,
+          368,
+          32
+        ],
+        "text": "ae ens Month & Year of Manufacture:",
+        "confidence": 76.71,
+        "source": "heuristic",
+        "words": []
+      }
+    ],
+    "full_image_ocr": {
+      "text": "[e]\nManufactured\n&\nPacked\nby:\nNutritional\nInformation\n)\n\u2018Sunrise\nFoods\nPvt.\nLtd.\n(Approx.\nvalues\nper\n100\ng)\n=\nPlot\nNo,\n12,\nIndustrial\nArea,\n346\nkcal\n|\nMandideep,\nBhopal\n~\n452046,\nPureFood\nmete\nen\n\u2014\n[ta\nfeconaancomeaets\nones)\n|\n|\ncaboiyarate\n||\n72.00\nToll\nFree:\n1800\n123.4567\n|\nDietary\nFiber\n|\n1029\nWH...",
+      "mean_confidence": 57.45,
+      "word_count": 189
+    },
+    "warnings": [
+      "No words recognised in this zone crop"
+    ]
+  },
+  "calibration": {
+    "method": "ean_upc_barcode",
+    "mm_per_px": 0.634301,
+    "barcode_type": "UPC_A",
+    "barcode_value": "906024456789",
+    "barcode_bbox": [
+      700,
+      575,
+      59,
+      212
+    ],
+    "reference_width_mm": 37.29,
+    "reference_width_px": 58.79,
+    "notes": "Calibrated from UPC_A barcode (ref width 37.29 mm)."
+  },
+  "font_metrics": [
+    {
+      "zone_type": "manufacturer_address_block",
+      "char_height_px_median": 12.0,
+      "char_height_px_min": 8.0,
+      "char_height_px_max": 63.0,
+      "char_height_mm_median": 7.612,
+      "contrast_ratio": 4.03,
+      "uppercase_ratio": 0.089,
+      "calibrated": true,
+      "warnings": []
+    },
+    {
+      "zone_type": "consumer_care_block",
+      "char_height_px_median": 12.0,
+      "char_height_px_min": 2.0,
+      "char_height_px_max": 29.0,
+      "char_height_mm_median": 7.612,
+      "contrast_ratio": 3.3,
+      "uppercase_ratio": 0.347,
+      "calibrated": true,
+      "warnings": []
+    },
+    {
+      "zone_type": "mrp_block",
+      "char_height_px_median": 120.0,
+      "char_height_px_min": 62.0,
+      "char_height_px_max": 131.0,
+      "char_height_mm_median": 76.116,
+      "contrast_ratio": 5.7,
+      "uppercase_ratio": 0.0,
+      "calibrated": true,
+      "warnings": []
+    },
+    {
+      "zone_type": "mfg_date_block",
+      "char_height_px_median": 0.0,
+      "char_height_px_min": 0.0,
+      "char_height_px_max": 0.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 6.08,
+      "uppercase_ratio": 0.111,
+      "calibrated": false,
+      "warnings": [
+        "No character boxes found in this zone crop"
+      ]
+    }
+  ],
+  "declarations": [
+    {
+      "field_name": "consumer_email",
+      "value": "care@sunrisefoods.in",
+      "raw_text": "SUNTISS FOOGS Fvt. Ltd. \u2014\u2014 \u2014 Toll Free: 1800 123 4567 1029 | Email::care@sunrisefoods.in",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "consumer_care_block",
+      "qualifiers": [],
+      "rule_id": "MD-07"
+    },
+    {
+      "field_name": "consumer_care_details",
+      "value": "",
+      "raw_text": "ae ens Month & Year of Manufacture:",
+      "confidence": 0.3,
+      "method": "heuristic",
+      "source_zone": "consumer_care_block",
+      "qualifiers": [],
+      "rule_id": ""
+    },
+    {
+      "field_name": "manufacturer_packer_importer",
+      "value": "",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.3,
+      "method": "heuristic",
+      "source_zone": "manufacturer_address_block",
+      "qualifiers": [],
+      "rule_id": ""
+    },
+    {
+      "field_name": "generic_name_of_commodity",
+      "value": "Wheat Flour",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-02"
+    },
+    {
+      "field_name": "unit_sale_price",
+      "value": "60.00",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-10"
+    },
+    {
+      "field_name": "mrp",
+      "value": "60.00",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    },
+    {
+      "field_name": "net_quantity",
+      "value": "11 kg",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-03"
+    },
+    {
+      "field_name": "consumer_phone",
+      "value": "18001234567",
+      "raw_text": "[e] Manufactured & Packed by: Nutritional Information ) \u2018Sunrise Foods Pvt. Ltd. (Approx. values per 100 g) = Plot No, 12, Industrial Area, 346 kcal | Mandideep, Bhopal ~ 452046, PureFood mete en \u2014 [ta feconaancomeaets ones) | | caboiyarate || 72.00 Toll Free: 1800 123.4567 | Dietary Fiber | 1029 WH...",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-07"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "MD-04",
+      "rule_reference": "Rule 6(1)(d)",
+      "field_name": "month_year_of_manufacture",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: month_year_of_manufacture",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-06",
+      "rule_reference": "Rule 6(1)(f)",
+      "field_name": "dimensions",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'product_category in ['textiles','bedsheets','sarees','towels']' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-08",
+      "rule_reference": "Rule 6 (expanded, post-2017 amendment)",
+      "field_name": "country_of_origin",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'package_flagged_as_imported == true' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-09",
+      "rule_reference": "Rule 6(1), sub-rule extended by 2017 amendment (effective 01-01-2018)",
+      "field_name": "ecommerce_declarations",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "N/A for physical package scan (e-commerce listing rule)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 0.0
+      }
+    },
+    {
+      "rule_id": "PL-02",
+      "rule_reference": "Rule 8(1)(a)-(b)",
+      "field_name": "Clear space around net quantity declaration",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Clear space around net quantity declaration)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-03",
+      "rule_reference": "Rule 9(1)(a)-(b)",
+      "field_name": "Legible, prominent, contrasting declarations",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Legible, prominent, contrasting declarations)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-04",
+      "rule_reference": "Rule 9(2)",
+      "field_name": "No declaration readable only through liquid",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (No declaration readable only through liquid)",
+      "evidence": {}
+    }
+  ],
+  "stats": {
+    "total_checks": 8,
+    "compliant": 0,
+    "non_compliant": 0,
+    "missing": 1,
+    "needs_review": 4,
+    "not_applicable": 3
+  },
+  "warnings": []
+}

@@ -1,0 +1,815 @@
+{
+  "status": "ok",
+  "message": "",
+  "compliance_status": "non_compliant",
+  "scan": {
+    "status": "ok",
+    "message": "",
+    "image_width": 1172,
+    "image_height": 940,
+    "quality": {
+      "is_usable": true,
+      "width": 1172,
+      "height": 940,
+      "channels": 3,
+      "blur_variance": 2111.24,
+      "brightness_mean": 192.21,
+      "darkness_ratio": 0.0211,
+      "glare_ratio": 0.1465,
+      "warnings": []
+    },
+    "preprocessing": {
+      "transforms_applied": [
+        "CLAHE",
+        "denoise"
+      ],
+      "deskew_angle": 0.0,
+      "perspective_rectified": false
+    },
+    "zones": [
+      {
+        "zone_type": "consumer_care_block",
+        "bbox": [
+          63,
+          222,
+          1066,
+          119
+        ],
+        "text": "\u2014_-\nFor:\nints\n/\nsuggestic\nea\neR\nTBS\nAS\nDOA,\n\u00ab\nGainomnctectie,\n|\n|\nTout\nPepsiCo\n|\njon\n(Foods\n|\n),\n(Poboc27,\nGuraram\n122002,\nSaturated\nFat\n14.19]\nHaryana,\nIndia.\nTransFat\n||\nOg\n|\n12\n10024020\nFe\nyi\ni\nos\nsinenareerstinenke\naccent",
+        "confidence": 44.44,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "\u2014_-",
+            "confidence": 0.0,
+            "bbox": [
+              0,
+              0,
+              34,
+              19
+            ]
+          },
+          {
+            "text": "For:",
+            "confidence": 53.0,
+            "bbox": [
+              606,
+              0,
+              26,
+              19
+            ]
+          },
+          {
+            "text": "ints",
+            "confidence": 30.0,
+            "bbox": [
+              725,
+              2,
+              3,
+              2
+            ]
+          },
+          {
+            "text": "/",
+            "confidence": 92.0,
+            "bbox": [
+              746,
+              1,
+              6,
+              15
+            ]
+          },
+          {
+            "text": "suggestic",
+            "confidence": 90.0,
+            "bbox": [
+              796,
+              1,
+              3,
+              3
+            ]
+          },
+          {
+            "text": "ea",
+            "confidence": 15.0,
+            "bbox": [
+              886,
+              0,
+              14,
+              12
+            ]
+          },
+          {
+            "text": "eR",
+            "confidence": 24.0,
+            "bbox": [
+              911,
+              0,
+              22,
+              2
+            ]
+          },
+          {
+            "text": "TBS",
+            "confidence": 28.0,
+            "bbox": [
+              937,
+              0,
+              12,
+              12
+            ]
+          },
+          {
+            "text": "AS",
+            "confidence": 27.0,
+            "bbox": [
+              955,
+              0,
+              17,
+              2
+            ]
+          },
+          {
+            "text": "DOA,",
+            "confidence": 0.0,
+            "bbox": [
+              1025,
+              0,
+              25,
+              2
+            ]
+          },
+          {
+            "text": "\u00ab",
+            "confidence": 0.0,
+            "bbox": [
+              12,
+              17,
+              22,
+              19
+            ]
+          },
+          {
+            "text": "Gainomnctectie,",
+            "confidence": 0.0,
+            "bbox": [
+              610,
+              1,
+              199,
+              48
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 31.0,
+            "bbox": [
+              809,
+              4,
+              12,
+              47
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 44.0,
+            "bbox": [
+              848,
+              0,
+              15,
+              55
+            ]
+          },
+          {
+            "text": "Tout",
+            "confidence": 39.0,
+            "bbox": [
+              889,
+              18,
+              53,
+              12
+            ]
+          },
+          {
+            "text": "PepsiCo",
+            "confidence": 92.0,
+            "bbox": [
+              607,
+              33,
+              44,
+              26
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 91.0,
+            "bbox": [
+              654,
+              33,
+              5,
+              26
+            ]
+          },
+          {
+            "text": "jon",
+            "confidence": 70.0,
+            "bbox": [
+              710,
+              40,
+              16,
+              8
+            ]
+          },
+          {
+            "text": "(Foods",
+            "confidence": 88.0,
+            "bbox": [
+              734,
+              36,
+              33,
+              12
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 88.0,
+            "bbox": [
+              766,
+              32,
+              5,
+              26
+            ]
+          },
+          {
+            "text": "),",
+            "confidence": 81.0,
+            "bbox": [
+              816,
+              46,
+              3,
+              4
+            ]
+          },
+          {
+            "text": "(Poboc27,",
+            "confidence": 0.0,
+            "bbox": [
+              608,
+              33,
+              66,
+              44
+            ]
+          },
+          {
+            "text": "Guraram",
+            "confidence": 18.0,
+            "bbox": [
+              681,
+              33,
+              55,
+              44
+            ]
+          },
+          {
+            "text": "122002,",
+            "confidence": 22.0,
+            "bbox": [
+              743,
+              33,
+              56,
+              44
+            ]
+          },
+          {
+            "text": "Saturated",
+            "confidence": 96.0,
+            "bbox": [
+              885,
+              39,
+              61,
+              27
+            ]
+          },
+          {
+            "text": "Fat",
+            "confidence": 89.0,
+            "bbox": [
+              952,
+              39,
+              23,
+              27
+            ]
+          },
+          {
+            "text": "14.19]",
+            "confidence": 47.0,
+            "bbox": [
+              1026,
+              36,
+              42,
+              32
+            ]
+          },
+          {
+            "text": "Haryana,",
+            "confidence": 80.0,
+            "bbox": [
+              607,
+              64,
+              51,
+              34
+            ]
+          },
+          {
+            "text": "India.",
+            "confidence": 66.0,
+            "bbox": [
+              663,
+              64,
+              35,
+              34
+            ]
+          },
+          {
+            "text": "TransFat",
+            "confidence": 78.0,
+            "bbox": [
+              889,
+              73,
+              56,
+              13
+            ]
+          },
+          {
+            "text": "||",
+            "confidence": 47.0,
+            "bbox": [
+              978,
+              63,
+              27,
+              35
+            ]
+          },
+          {
+            "text": "Og",
+            "confidence": 54.0,
+            "bbox": [
+              997,
+              67,
+              73,
+              26
+            ]
+          },
+          {
+            "text": "|",
+            "confidence": 54.0,
+            "bbox": [
+              1062,
+              63,
+              10,
+              35
+            ]
+          },
+          {
+            "text": "12",
+            "confidence": 17.0,
+            "bbox": [
+              609,
+              97,
+              17,
+              15
+            ]
+          },
+          {
+            "text": "10024020",
+            "confidence": 8.0,
+            "bbox": [
+              633,
+              97,
+              147,
+              16
+            ]
+          },
+          {
+            "text": "Fe",
+            "confidence": 34.0,
+            "bbox": [
+              752,
+              79,
+              31,
+              52
+            ]
+          },
+          {
+            "text": "yi",
+            "confidence": 42.0,
+            "bbox": [
+              269,
+              107,
+              30,
+              24
+            ]
+          },
+          {
+            "text": "i",
+            "confidence": 12.0,
+            "bbox": [
+              610,
+              117,
+              17,
+              14
+            ]
+          },
+          {
+            "text": "os",
+            "confidence": 41.0,
+            "bbox": [
+              635,
+              106,
+              9,
+              25
+            ]
+          },
+          {
+            "text": "sinenareerstinenke",
+            "confidence": 0.0,
+            "bbox": [
+              633,
+              117,
+              171,
+              14
+            ]
+          },
+          {
+            "text": "accent",
+            "confidence": 34.0,
+            "bbox": [
+              770,
+              106,
+              39,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "fssai_block",
+        "bbox": [
+          240,
+          618,
+          840,
+          43
+        ],
+        "text": "ey Lic. No. 1014064000435 aN Be BatchNo: a A0425",
+        "confidence": 49.22,
+        "source": "heuristic",
+        "words": []
+      },
+      {
+        "zone_type": "net_qty_block",
+        "bbox": [
+          60,
+          758,
+          1016,
+          37
+        ],
+        "text": "eA Net Quantity: \u2019 52g",
+        "confidence": 74.0,
+        "source": "heuristic",
+        "words": []
+      },
+      {
+        "zone_type": "mrp_block",
+        "bbox": [
+          221,
+          663,
+          860,
+          21
+        ],
+        "text": "ye 20.00 = MRP:",
+        "confidence": 64.25,
+        "source": "heuristic",
+        "words": []
+      }
+    ],
+    "full_image_ocr": {
+      "text": "\u2014\n=\n\u2014\n\u2014\u2014\u2014\n\u2014\n=\n7\n\u2014\u2014\u2014_\u2014_\u2014_\u2014|\n\u2014\u2014$\u2014\u2014\n\u2014\n\u2014=\n\u2014\u2014\u2014\u2014\u2014\n\u2014_\u2014<\u2014\u2014\u2014<\u2014\u2014\u2014\nof\n\\\nvalues\n;\n(Faods\nDivi\n(Approx.\nper\n100g)\ny\nIMT\nManecar\nGurugiom\n12051\nae\nForconame\ncomps\nsngesion:|\n|\nCarbohydrate\n|\n5489\n<<\nCustomer\nCare\nExecutive,\nTotal\nFat\nPepsiCo\nindia\nRegion\nFoods\nDivision),\n|\n||\n|<\nseed\nrat\n\u00bb\n20,\nBox\n27,\nGurugram\n-\n122002,\n3|\nind\ncc\n\u00a9\n1800\n22\n4020\n(Toll\nFree)\n|\n586\nmg\n|\n[eae\n|\na\n\u00a9\nwww.pepsicoindia.co.in\n\u2018Mergen\nAACR\n7\n\u2014\n-\nContains\nPotato.\nPretete\naa\n1))\n|\nMay\ncontain\ntraces\nof\n|\n,\nlodized\nSalt,\nSugar,\nAcidity\nRegulator\na\noey\nane\nnet\nCl\nSalted\n-_\u2014a\nassic\na)\n.\nPotato\nChips\n-\nSiren\ncool\nry\nand\nyg\nae\ngps\nSant\n4\n&\nBe\ney\naN\na\nLic.\nNo.\n1014064000435\nBatchNo:\nA0425\nye\nMRP:\n=\n20.00\nSe\neee\nf\n8'901571\"001234\n\u00a30.38\nperg\n\u2019\neA\nNet\nQuantity:\n52g\nWW:\nncl,\nof\nall\ntaxes\nsm\n*~\nee\n\\\nazz\n\u2014\n\u2014\n\u2014\n\u2014_\u2014\u2014\n\u2014\u2014\u2014",
+      "mean_confidence": 52.59,
+      "word_count": 160
+    },
+    "warnings": [
+      "No words recognised in this zone crop",
+      "No words recognised in this zone crop",
+      "No words recognised in this zone crop"
+    ]
+  },
+  "calibration": {
+    "method": "none",
+    "mm_per_px": 0.0,
+    "barcode_type": "",
+    "barcode_value": "",
+    "barcode_bbox": [],
+    "reference_width_mm": 0.0,
+    "reference_width_px": 0.0,
+    "notes": "No barcode found; mm-based checks will require manual calibration."
+  },
+  "font_metrics": [
+    {
+      "zone_type": "consumer_care_block",
+      "char_height_px_median": 12.0,
+      "char_height_px_min": 2.0,
+      "char_height_px_max": 42.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 5.98,
+      "uppercase_ratio": 0.181,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "fssai_block",
+      "char_height_px_median": 17.0,
+      "char_height_px_min": 3.0,
+      "char_height_px_max": 43.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 3.79,
+      "uppercase_ratio": 0.35,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "net_qty_block",
+      "char_height_px_median": 15.0,
+      "char_height_px_min": 3.0,
+      "char_height_px_max": 37.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 2.11,
+      "uppercase_ratio": 0.214,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "mrp_block",
+      "char_height_px_median": 13.0,
+      "char_height_px_min": 2.0,
+      "char_height_px_max": 21.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 6.31,
+      "uppercase_ratio": 0.6,
+      "calibrated": false,
+      "warnings": []
+    }
+  ],
+  "declarations": [
+    {
+      "field_name": "mrp",
+      "value": "20.00",
+      "raw_text": "ye 20.00 = MRP:",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "mrp_block",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    },
+    {
+      "field_name": "net_quantity",
+      "value": "52 g",
+      "raw_text": "eA Net Quantity: \u2019 52g",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "net_qty_block",
+      "qualifiers": [],
+      "rule_id": "MD-03"
+    },
+    {
+      "field_name": "batch_number",
+      "value": "No",
+      "raw_text": "ey Lic. No. 1014064000435 aN Be BatchNo: a A0425",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "fssai_block",
+      "qualifiers": [],
+      "rule_id": "BATCH-01"
+    },
+    {
+      "field_name": "consumer_phone",
+      "value": "1210024020",
+      "raw_text": "\u2014_- For: ints / suggestic ea eR TBS AS DOA, \u00ab Gainomnctectie, | | Tout PepsiCo | jon (Foods | ), (Poboc27, Guraram 122002, Saturated Fat 14.19] Haryana, India. TransFat || Og | 12 10024020 Fe yi i os sinenareerstinenke accent",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "consumer_care_block",
+      "qualifiers": [],
+      "rule_id": "MD-07"
+    },
+    {
+      "field_name": "consumer_care_details",
+      "value": "",
+      "raw_text": "ye 20.00 = MRP:",
+      "confidence": 0.3,
+      "method": "heuristic",
+      "source_zone": "consumer_care_block",
+      "qualifiers": [],
+      "rule_id": ""
+    },
+    {
+      "field_name": "generic_name_of_commodity",
+      "value": "Potato Chips",
+      "raw_text": "\u2014 = \u2014 \u2014\u2014\u2014 \u2014 = 7 \u2014\u2014\u2014_\u2014_\u2014_\u2014| \u2014\u2014$\u2014\u2014 \u2014 \u2014= \u2014\u2014\u2014\u2014\u2014 \u2014_\u2014<\u2014\u2014\u2014<\u2014\u2014\u2014 of \\ values ; (Faods Divi (Approx. per 100g) y IMT Manecar Gurugiom 12051 ae Forconame comps sngesion:| | Carbohydrate | 5489 << Customer Care Executive, Total Fat PepsiCo india Region Foods Division), | || |< seed rat \u00bb 20, Box 27, Gurugram - 122002, 3| ind cc \u00a9 1800 22 4020 (Toll Free) | 586 mg | [eae | a \u00a9 www.pepsicoindia.co.in \u2018Mergen AACR 7 \u2014 - Contains Potato. Pretete aa 1)) | May contain traces of | , lodized Salt, Sugar, Acidity Regulator a oey ane net Cl Salted -_\u2014a assic a) . Potato Chips - Siren cool ry and yg ae gps Sant 4 & Be ey aN a Lic. No. 1014064000435 BatchNo: A0425 ye MRP: = 20.00 Se eee f 8'901571\"001234 \u00a30.38 perg \u2019 eA Net Quantity: 52g WW: ncl, of all taxes sm *~ ee \\ azz \u2014 \u2014 \u2014 \u2014_\u2014\u2014 \u2014\u2014\u2014",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-02"
+    },
+    {
+      "field_name": "mrp",
+      "value": "101406",
+      "raw_text": "\u2014 = \u2014 \u2014\u2014\u2014 \u2014 = 7 \u2014\u2014\u2014_\u2014_\u2014_\u2014| \u2014\u2014$\u2014\u2014 \u2014 \u2014= \u2014\u2014\u2014\u2014\u2014 \u2014_\u2014<\u2014\u2014\u2014<\u2014\u2014\u2014 of \\ values ; (Faods Divi (Approx. per 100g) y IMT Manecar Gurugiom 12051 ae Forconame comps sngesion:| | Carbohydrate | 5489 << Customer Care Executive, Total Fat PepsiCo india Region Foods Division), | || |< seed rat \u00bb 20, Box 27, Gurugram - 122002, 3| ind cc \u00a9 1800 22 4020 (Toll Free) | 586 mg | [eae | a \u00a9 www.pepsicoindia.co.in \u2018Mergen AACR 7 \u2014 - Contains Potato. Pretete aa 1)) | May contain traces of | , lodized Salt, Sugar, Acidity Regulator a oey ane net Cl Salted -_\u2014a assic a) . Potato Chips - Siren cool ry and yg ae gps Sant 4 & Be ey aN a Lic. No. 1014064000435 BatchNo: A0425 ye MRP: = 20.00 Se eee f 8'901571\"001234 \u00a30.38 perg \u2019 eA Net Quantity: 52g WW: ncl, of all taxes sm *~ ee \\ azz \u2014 \u2014 \u2014 \u2014_\u2014\u2014 \u2014\u2014\u2014",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    },
+    {
+      "field_name": "batch_number",
+      "value": "A0425",
+      "raw_text": "\u2014 = \u2014 \u2014\u2014\u2014 \u2014 = 7 \u2014\u2014\u2014_\u2014_\u2014_\u2014| \u2014\u2014$\u2014\u2014 \u2014 \u2014= \u2014\u2014\u2014\u2014\u2014 \u2014_\u2014<\u2014\u2014\u2014<\u2014\u2014\u2014 of \\ values ; (Faods Divi (Approx. per 100g) y IMT Manecar Gurugiom 12051 ae Forconame comps sngesion:| | Carbohydrate | 5489 << Customer Care Executive, Total Fat PepsiCo india Region Foods Division), | || |< seed rat \u00bb 20, Box 27, Gurugram - 122002, 3| ind cc \u00a9 1800 22 4020 (Toll Free) | 586 mg | [eae | a \u00a9 www.pepsicoindia.co.in \u2018Mergen AACR 7 \u2014 - Contains Potato. Pretete aa 1)) | May contain traces of | , lodized Salt, Sugar, Acidity Regulator a oey ane net Cl Salted -_\u2014a assic a) . Potato Chips - Siren cool ry and yg ae gps Sant 4 & Be ey aN a Lic. No. 1014064000435 BatchNo: A0425 ye MRP: = 20.00 Se eee f 8'901571\"001234 \u00a30.38 perg \u2019 eA Net Quantity: 52g WW: ncl, of all taxes sm *~ ee \\ azz \u2014 \u2014 \u2014 \u2014_\u2014\u2014 \u2014\u2014\u2014",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "BATCH-01"
+    },
+    {
+      "field_name": "consumer_phone",
+      "value": "1800224020",
+      "raw_text": "\u2014 = \u2014 \u2014\u2014\u2014 \u2014 = 7 \u2014\u2014\u2014_\u2014_\u2014_\u2014| \u2014\u2014$\u2014\u2014 \u2014 \u2014= \u2014\u2014\u2014\u2014\u2014 \u2014_\u2014<\u2014\u2014\u2014<\u2014\u2014\u2014 of \\ values ; (Faods Divi (Approx. per 100g) y IMT Manecar Gurugiom 12051 ae Forconame comps sngesion:| | Carbohydrate | 5489 << Customer Care Executive, Total Fat PepsiCo india Region Foods Division), | || |< seed rat \u00bb 20, Box 27, Gurugram - 122002, 3| ind cc \u00a9 1800 22 4020 (Toll Free) | 586 mg | [eae | a \u00a9 www.pepsicoindia.co.in \u2018Mergen AACR 7 \u2014 - Contains Potato. Pretete aa 1)) | May contain traces of | , lodized Salt, Sugar, Acidity Regulator a oey ane net Cl Salted -_\u2014a assic a) . Potato Chips - Siren cool ry and yg ae gps Sant 4 & Be ey aN a Lic. No. 1014064000435 BatchNo: A0425 ye MRP: = 20.00 Se eee f 8'901571\"001234 \u00a30.38 perg \u2019 eA Net Quantity: 52g WW: ncl, of all taxes sm *~ ee \\ azz \u2014 \u2014 \u2014 \u2014_\u2014\u2014 \u2014\u2014\u2014",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-07"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "MD-01",
+      "rule_reference": "Rule 6(1)(a)",
+      "field_name": "manufacturer_packer_importer",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: manufacturer_packer_importer",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-04",
+      "rule_reference": "Rule 6(1)(d)",
+      "field_name": "month_year_of_manufacture",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: month_year_of_manufacture",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-05",
+      "rule_reference": "Rule 6(1)(e) read with Rule 2(m)",
+      "field_name": "mrp",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "MRP 'inclusive of all taxes' qualifier not visible in OCR; verify on the physical label",
+      "evidence": {
+        "value": "20.00"
+      }
+    },
+    {
+      "rule_id": "MD-06",
+      "rule_reference": "Rule 6(1)(f)",
+      "field_name": "dimensions",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'product_category in ['textiles','bedsheets','sarees','towels']' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-08",
+      "rule_reference": "Rule 6 (expanded, post-2017 amendment)",
+      "field_name": "country_of_origin",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'package_flagged_as_imported == true' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-09",
+      "rule_reference": "Rule 6(1), sub-rule extended by 2017 amendment (effective 01-01-2018)",
+      "field_name": "ecommerce_declarations",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "N/A for physical package scan (e-commerce listing rule)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-10",
+      "rule_reference": "Rule 6(11) (as introduced by LMPC (Amendment) Rules, 2021/2022)",
+      "field_name": "unit_sale_price",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Unit sale price not detected; requirement is effective-date sensitive (LMPC 2021-2023 amendments) - verify or pass enforce_unit_sale_price",
+      "evidence": {}
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 12.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 17.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 15.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 13.0
+      }
+    },
+    {
+      "rule_id": "PL-02",
+      "rule_reference": "Rule 8(1)(a)-(b)",
+      "field_name": "Clear space around net quantity declaration",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Clear space around net quantity declaration)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-03",
+      "rule_reference": "Rule 9(1)(a)-(b)",
+      "field_name": "Legible, prominent, contrasting declarations",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Legible, prominent, contrasting declarations)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-04",
+      "rule_reference": "Rule 9(2)",
+      "field_name": "No declaration readable only through liquid",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (No declaration readable only through liquid)",
+      "evidence": {}
+    }
+  ],
+  "stats": {
+    "total_checks": 14,
+    "compliant": 0,
+    "non_compliant": 0,
+    "missing": 2,
+    "needs_review": 9,
+    "not_applicable": 3
+  },
+  "warnings": [],
+  "advice": [],
+  "meta": {
+    "scan_id": "e1a8764eb905",
+    "created": "2026-09-09T16:44:42+00:00",
+    "operator_metadata": {
+      "scan_id": "ProductLays",
+      "officer": "demo_ProductLays"
+    }
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "status": "ok",
+  "message": "",
+  "compliance_status": "non_compliant",
+  "scan": {
+    "status": "ok",
+    "message": "",
+    "image_width": 291,
+    "image_height": 496,
+    "quality": {
+      "is_usable": true,
+      "width": 291,
+      "height": 496,
+      "channels": 3,
+      "blur_variance": 10697.33,
+      "brightness_mean": 144.95,
+      "darkness_ratio": 0.1189,
+      "glare_ratio": 0.0031,
+      "warnings": []
+    },
+    "preprocessing": {
+      "transforms_applied": [
+        "CLAHE",
+        "denoise",
+        "perspective_rectify"
+      ],
+      "deskew_angle": 0.0,
+      "perspective_rectified": true
+    },
+    "zones": [
+      {
+        "zone_type": "net_qty_block",
+        "bbox": [
+          17,
+          0,
+          255,
+          47
+        ],
+        "text": "id 120g Weight: Net",
+        "confidence": 50.5,
+        "source": "heuristic",
+        "words": []
+      },
+      {
+        "zone_type": "mrp_block",
+        "bbox": [
+          19,
+          34,
+          170,
+          13
+        ],
+        "text": "MRP\n2\n15.00\n(incl:\nof\nall\ntaxes)",
+        "confidence": 86.86,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "MRP",
+            "confidence": 96.0,
+            "bbox": [
+              5,
+              8,
+              26,
+              10
+            ]
+          },
+          {
+            "text": "2",
+            "confidence": 50.0,
+            "bbox": [
+              36,
+              8,
+              7,
+              10
+            ]
+          },
+          {
+            "text": "15.00",
+            "confidence": 95.0,
+            "bbox": [
+              49,
+              4,
+              29,
+              20
+            ]
+          },
+          {
+            "text": "(incl:",
+            "confidence": 90.0,
+            "bbox": [
+              84,
+              6,
+              27,
+              18
+            ]
+          },
+          {
+            "text": "of",
+            "confidence": 92.0,
+            "bbox": [
+              115,
+              6,
+              10,
+              10
+            ]
+          },
+          {
+            "text": "all",
+            "confidence": 90.0,
+            "bbox": [
+              129,
+              6,
+              11,
+              10
+            ]
+          },
+          {
+            "text": "taxes)",
+            "confidence": 95.0,
+            "bbox": [
+              144,
+              6,
+              32,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "fssai_block",
+        "bbox": [
+          21,
+          189,
+          259,
+          43
+        ],
+        "text": "Lic,\nNo.\n100150310001329\ngt)",
+        "confidence": 59.5,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "Lic,",
+            "confidence": 70.0,
+            "bbox": [
+              2,
+              28,
+              21,
+              27
+            ]
+          },
+          {
+            "text": "No.",
+            "confidence": 91.0,
+            "bbox": [
+              26,
+              37,
+              14,
+              10
+            ]
+          },
+          {
+            "text": "100150310001329",
+            "confidence": 77.0,
+            "bbox": [
+              47,
+              28,
+              85,
+              27
+            ]
+          },
+          {
+            "text": "gt)",
+            "confidence": 0.0,
+            "bbox": [
+              153,
+              6,
+              49,
+              43
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "batch_block",
+        "bbox": [
+          20,
+          86,
+          115,
+          11
+        ],
+        "text": "Batch\nNo.;\nB0724A",
+        "confidence": 61.67,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "Batch",
+            "confidence": 90.0,
+            "bbox": [
+              6,
+              6,
+              32,
+              11
+            ]
+          },
+          {
+            "text": "No.;",
+            "confidence": 22.0,
+            "bbox": [
+              44,
+              6,
+              23,
+              10
+            ]
+          },
+          {
+            "text": "B0724A",
+            "confidence": 73.0,
+            "bbox": [
+              74,
+              6,
+              47,
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "zone_type": "manufacturer_address_block",
+        "bbox": [
+          20,
+          155,
+          217,
+          14
+        ],
+        "text": "Manufactured\nby:\nBritannia\nIndustries\nLtd.\nDee\nA\nClscm\nme\nwk]\nCinnret\nValli-\u00abt.\nTAAACF",
+        "confidence": 46.62,
+        "source": "heuristic",
+        "words": [
+          {
+            "text": "Manufactured",
+            "confidence": 96.0,
+            "bbox": [
+              6,
+              6,
+              74,
+              10
+            ]
+          },
+          {
+            "text": "by:",
+            "confidence": 96.0,
+            "bbox": [
+              84,
+              7,
+              16,
+              12
+            ]
+          },
+          {
+            "text": "Britannia",
+            "confidence": 96.0,
+            "bbox": [
+              104,
+              7,
+              45,
+              10
+            ]
+          },
+          {
+            "text": "Industries",
+            "confidence": 96.0,
+            "bbox": [
+              153,
+              6,
+              50,
+              10
+            ]
+          },
+          {
+            "text": "Ltd.",
+            "confidence": 95.0,
+            "bbox": [
+              207,
+              6,
+              19,
+              10
+            ]
+          },
+          {
+            "text": "Dee",
+            "confidence": 16.0,
+            "bbox": [
+              7,
+              21,
+              13,
+              4
+            ]
+          },
+          {
+            "text": "A",
+            "confidence": 16.0,
+            "bbox": [
+              23,
+              22,
+              3,
+              4
+            ]
+          },
+          {
+            "text": "Clscm",
+            "confidence": 0.0,
+            "bbox": [
+              35,
+              21,
+              57,
+              4
+            ]
+          },
+          {
+            "text": "me",
+            "confidence": 32.0,
+            "bbox": [
+              57,
+              19,
+              3,
+              7
+            ]
+          },
+          {
+            "text": "wk]",
+            "confidence": 34.0,
+            "bbox": [
+              63,
+              21,
+              29,
+              4
+            ]
+          },
+          {
+            "text": "Cinnret",
+            "confidence": 0.0,
+            "bbox": [
+              97,
+              21,
+              30,
+              4
+            ]
+          },
+          {
+            "text": "Valli-\u00abt.",
+            "confidence": 29.0,
+            "bbox": [
+              135,
+              21,
+              37,
+              4
+            ]
+          },
+          {
+            "text": "TAAACF",
+            "confidence": 0.0,
+            "bbox": [
+              184,
+              21,
+              38,
+              5
+            ]
+          }
+        ]
+      }
+    ],
+    "full_image_ocr": {
+      "text": "Net\nWeight:\n120g\nid\nMRP\n&\n15.00\n(incl,\nof\nall\ntaxes)\nMED:\n12/07/2024\nBEST\nBEFORE:\n11/01/2025\nBatch\nNo-:\nBO724A\nIngredients:\nRefined\nWheat\nFlour\n(Maida),\n\u2018Sugar,\nEdible\nVegetable\nOil,\nInvert\nSyrup,\nRaising\n\u2018Agents\n(S03(ii),\nSOI),\nlodised\nSalt,\nEmulsifier\n(322).\nManufactured\nby:\nBritannia\nIndustries\nLtd.\n5/1A,\nHungerford\nStreet,\nKolkata\n-\n700017,\nIndia.\nLic.\nNo.\n1001503101329\n1)\n>",
+      "mean_confidence": 79.33,
+      "word_count": 55
+    },
+    "warnings": [
+      "No words recognised in this zone crop"
+    ]
+  },
+  "calibration": {
+    "method": "none",
+    "mm_per_px": 0.0,
+    "barcode_type": "",
+    "barcode_value": "",
+    "barcode_bbox": [],
+    "reference_width_mm": 0.0,
+    "reference_width_px": 0.0,
+    "notes": "No barcode found; mm-based checks will require manual calibration."
+  },
+  "font_metrics": [
+    {
+      "zone_type": "net_qty_block",
+      "char_height_px_median": 8.5,
+      "char_height_px_min": 3.0,
+      "char_height_px_max": 19.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 1.97,
+      "uppercase_ratio": 0.167,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "mrp_block",
+      "char_height_px_median": 13.0,
+      "char_height_px_min": 11.0,
+      "char_height_px_max": 13.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 2.03,
+      "uppercase_ratio": 0.176,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "fssai_block",
+      "char_height_px_median": 40.0,
+      "char_height_px_min": 8.0,
+      "char_height_px_max": 43.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 2.7,
+      "uppercase_ratio": 0.286,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "batch_block",
+      "char_height_px_median": 11.0,
+      "char_height_px_min": 3.0,
+      "char_height_px_max": 11.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 4.56,
+      "uppercase_ratio": 0.444,
+      "calibrated": false,
+      "warnings": []
+    },
+    {
+      "zone_type": "manufacturer_address_block",
+      "char_height_px_median": 14.0,
+      "char_height_px_min": 5.0,
+      "char_height_px_max": 14.0,
+      "char_height_mm_median": 0.0,
+      "contrast_ratio": 4.93,
+      "uppercase_ratio": 0.221,
+      "calibrated": false,
+      "warnings": []
+    }
+  ],
+  "declarations": [
+    {
+      "field_name": "mrp",
+      "value": "2",
+      "raw_text": "MRP 2 15.00 (incl: of all taxes)",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "mrp_block",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    },
+    {
+      "field_name": "net_quantity",
+      "value": "120 g",
+      "raw_text": "id 120g Weight: Net",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "net_qty_block",
+      "qualifiers": [],
+      "rule_id": "MD-03"
+    },
+    {
+      "field_name": "batch_number",
+      "value": "No",
+      "raw_text": "Batch No.; B0724A",
+      "confidence": 0.85,
+      "method": "regex",
+      "source_zone": "batch_block",
+      "qualifiers": [],
+      "rule_id": "BATCH-01"
+    },
+    {
+      "field_name": "manufacturer_packer_importer",
+      "value": "",
+      "raw_text": "Net Weight: 120g id MRP & 15.00 (incl, of all taxes) MED: 12/07/2024 BEST BEFORE: 11/01/2025 Batch No-: BO724A Ingredients: Refined Wheat Flour (Maida), \u2018Sugar, Edible Vegetable Oil, Invert Syrup, Raising \u2018Agents (S03(ii), SOI), lodised Salt, Emulsifier (322). Manufactured by: Britannia Industries Ltd. 5/1A, Hungerford Street, Kolkata - 700017, India. Lic. No. 1001503101329 1) >",
+      "confidence": 0.3,
+      "method": "heuristic",
+      "source_zone": "manufacturer_address_block",
+      "qualifiers": [],
+      "rule_id": ""
+    },
+    {
+      "field_name": "generic_name_of_commodity",
+      "value": "Wheat Flour",
+      "raw_text": "Net Weight: 120g id MRP & 15.00 (incl, of all taxes) MED: 12/07/2024 BEST BEFORE: 11/01/2025 Batch No-: BO724A Ingredients: Refined Wheat Flour (Maida), \u2018Sugar, Edible Vegetable Oil, Invert Syrup, Raising \u2018Agents (S03(ii), SOI), lodised Salt, Emulsifier (322). Manufactured by: Britannia Industries Ltd. 5/1A, Hungerford Street, Kolkata - 700017, India. Lic. No. 1001503101329 1) >",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-02"
+    },
+    {
+      "field_name": "mrp",
+      "value": "120",
+      "raw_text": "Net Weight: 120g id MRP & 15.00 (incl, of all taxes) MED: 12/07/2024 BEST BEFORE: 11/01/2025 Batch No-: BO724A Ingredients: Refined Wheat Flour (Maida), \u2018Sugar, Edible Vegetable Oil, Invert Syrup, Raising \u2018Agents (S03(ii), SOI), lodised Salt, Emulsifier (322). Manufactured by: Britannia Industries Ltd. 5/1A, Hungerford Street, Kolkata - 700017, India. Lic. No. 1001503101329 1) >",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-05"
+    },
+    {
+      "field_name": "month_year_of_manufacture",
+      "value": "12/07/2024",
+      "raw_text": "Net Weight: 120g id MRP & 15.00 (incl, of all taxes) MED: 12/07/2024 BEST BEFORE: 11/01/2025 Batch No-: BO724A Ingredients: Refined Wheat Flour (Maida), \u2018Sugar, Edible Vegetable Oil, Invert Syrup, Raising \u2018Agents (S03(ii), SOI), lodised Salt, Emulsifier (322). Manufactured by: Britannia Industries Ltd. 5/1A, Hungerford Street, Kolkata - 700017, India. Lic. No. 1001503101329 1) >",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-04"
+    },
+    {
+      "field_name": "use_by_date",
+      "value": "11/01/2025",
+      "raw_text": "Net Weight: 120g id MRP & 15.00 (incl, of all taxes) MED: 12/07/2024 BEST BEFORE: 11/01/2025 Batch No-: BO724A Ingredients: Refined Wheat Flour (Maida), \u2018Sugar, Edible Vegetable Oil, Invert Syrup, Raising \u2018Agents (S03(ii), SOI), lodised Salt, Emulsifier (322). Manufactured by: Britannia Industries Ltd. 5/1A, Hungerford Street, Kolkata - 700017, India. Lic. No. 1001503101329 1) >",
+      "confidence": 0.6,
+      "method": "regex",
+      "source_zone": "full_image",
+      "qualifiers": [],
+      "rule_id": "MD-07"
+    }
+  ],
+  "violations": [
+    {
+      "rule_id": "MD-06",
+      "rule_reference": "Rule 6(1)(f)",
+      "field_name": "dimensions",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'product_category in ['textiles','bedsheets','sarees','towels']' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-07",
+      "rule_reference": "Rule 6(2)",
+      "field_name": "consumer_care_details",
+      "status": "missing",
+      "severity": "high",
+      "reason": "Missing mandatory declaration: consumer_care_details",
+      "evidence": {
+        "source_zone": "",
+        "raw_text": ""
+      }
+    },
+    {
+      "rule_id": "MD-08",
+      "rule_reference": "Rule 6 (expanded, post-2017 amendment)",
+      "field_name": "country_of_origin",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "Not applicable (condition 'package_flagged_as_imported == true' not met)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-09",
+      "rule_reference": "Rule 6(1), sub-rule extended by 2017 amendment (effective 01-01-2018)",
+      "field_name": "ecommerce_declarations",
+      "status": "not_applicable",
+      "severity": "low",
+      "reason": "N/A for physical package scan (e-commerce listing rule)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "MD-10",
+      "rule_reference": "Rule 6(11) (as introduced by LMPC (Amendment) Rules, 2021/2022)",
+      "field_name": "unit_sale_price",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Unit sale price not detected; requirement is effective-date sensitive (LMPC 2021-2023 amendments) - verify or pass enforce_unit_sale_price",
+      "evidence": {}
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 8.5
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 13.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 40.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 11.0
+      }
+    },
+    {
+      "rule_id": "FS-01",
+      "rule_reference": "Rule 7(3)",
+      "field_name": "font_size_and_legibility_rules.general_letter_height",
+      "status": "needs_review",
+      "severity": "medium",
+      "reason": "Font height rule requires a calibrated mm-per-px reference",
+      "evidence": {
+        "char_height_px": 14.0
+      }
+    },
+    {
+      "rule_id": "PL-02",
+      "rule_reference": "Rule 8(1)(a)-(b)",
+      "field_name": "Clear space around net quantity declaration",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Clear space around net quantity declaration)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-03",
+      "rule_reference": "Rule 9(1)(a)-(b)",
+      "field_name": "Legible, prominent, contrasting declarations",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (Legible, prominent, contrasting declarations)",
+      "evidence": {}
+    },
+    {
+      "rule_id": "PL-04",
+      "rule_reference": "Rule 9(2)",
+      "field_name": "No declaration readable only through liquid",
+      "status": "needs_review",
+      "severity": "low",
+      "reason": "Placement check requires manual/visual review (No declaration readable only through liquid)",
+      "evidence": {}
+    }
+  ],
+  "stats": {
+    "total_checks": 13,
+    "compliant": 0,
+    "non_compliant": 0,
+    "missing": 1,
+    "needs_review": 9,
+    "not_applicable": 3
+  },
+  "warnings": [],
+  "advice": [],
+  "meta": {
+    "scan_id": "84de10020d2a",
+    "created": "2026-09-09T16:44:38+00:00",
+    "operator_metadata": {
+      "scan_id": "package_003",
+      "officer": "demo_package_003"
+    }
+  }
+}

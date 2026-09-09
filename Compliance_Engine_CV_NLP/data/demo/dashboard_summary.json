@@ -1,0 +1,101 @@
+{
+  "total_scans": 5,
+  "status_distribution": {
+    "non_compliant": 5
+  },
+  "violation_trend": {
+    "2026-09-09": 9
+  },
+  "officer_activity": {
+    "demo_Wheet": 1,
+    "demo_ProductLays": 1,
+    "demo_package_003": 1,
+    "demo_package_002": 1,
+    "demo_package_001": 1
+  },
+  "top_violation_rules": [
+    [
+      "MD-04",
+      3
+    ],
+    [
+      "MD-07",
+      3
+    ],
+    [
+      "MD-01",
+      2
+    ],
+    [
+      "MD-03",
+      1
+    ]
+  ],
+  "recent_scans": [
+    {
+      "scan_id": "80dea810bf43",
+      "created": "2026-09-09T16:44:46+00:00",
+      "compliance_status": "non_compliant",
+      "missing": 1,
+      "non_compliant": 0,
+      "needs_review": 4,
+      "filename": "80dea810bf43.json",
+      "metadata": {
+        "scan_id": "Wheet",
+        "officer": "demo_Wheet"
+      }
+    },
+    {
+      "scan_id": "e1a8764eb905",
+      "created": "2026-09-09T16:44:42+00:00",
+      "compliance_status": "non_compliant",
+      "missing": 2,
+      "non_compliant": 0,
+      "needs_review": 9,
+      "filename": "e1a8764eb905.json",
+      "metadata": {
+        "scan_id": "ProductLays",
+        "officer": "demo_ProductLays"
+      }
+    },
+    {
+      "scan_id": "84de10020d2a",
+      "created": "2026-09-09T16:44:38+00:00",
+      "compliance_status": "non_compliant",
+      "missing": 1,
+      "non_compliant": 0,
+      "needs_review": 9,
+      "filename": "84de10020d2a.json",
+      "metadata": {
+        "scan_id": "package_003",
+        "officer": "demo_package_003"
+      }
+    },
+    {
+      "scan_id": "049b31158a82",
+      "created": "2026-09-09T16:44:35+00:00",
+      "compliance_status": "non_compliant",
+      "missing": 3,
+      "non_compliant": 1,
+      "needs_review": 8,
+      "filename": "049b31158a82.json",
+      "metadata": {
+        "scan_id": "package_002",
+        "officer": "demo_package_002"
+      }
+    },
+    {
+      "scan_id": "75f16bbe4876",
+      "created": "2026-09-09T16:44:33+00:00",
+      "compliance_status": "non_compliant",
+      "missing": 1,
+      "non_compliant": 0,
+      "needs_review": 10,
+      "filename": "75f16bbe4876.json",
+      "metadata": {
+        "scan_id": "package_001",
+        "officer": "demo_package_001"
+      }
+    }
+  ]
+}

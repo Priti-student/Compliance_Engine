@@ -1,0 +1,328 @@
+{
+  "status": "ok",
+  "message": "",
+  "image_width": 291,
+  "image_height": 496,
+  "quality": {
+    "is_usable": true,
+    "width": 291,
+    "height": 496,
+    "channels": 3,
+    "blur_variance": 7452.57,
+    "brightness_mean": 119.98,
+    "darkness_ratio": 0.1179,
+    "glare_ratio": 0.003,
+    "warnings": []
+  },
+  "preprocessing": {
+    "transforms_applied": [
+      "CLAHE",
+      "denoise"
+    ],
+    "deskew_angle": 0.0,
+    "perspective_rectified": false
+  },
+  "zones": [
+    {
+      "zone_type": "net_qty_block",
+      "bbox": [
+        38,
+        279,
+        230,
+        35
+      ],
+      "text": "g le] 52 Quantity: Net",
+      "confidence": 66.0,
+      "source": "heuristic",
+      "words": []
+    },
+    {
+      "zone_type": "mrp_block",
+      "bbox": [
+        38,
+        313,
+        168,
+        14
+      ],
+      "text": "MRP\n&\n20.00\n(incl.\nof\nall\ntaxes)",
+      "confidence": 86.0,
+      "source": "heuristic",
+      "words": [
+        {
+          "text": "MRP",
+          "confidence": 93.0,
+          "bbox": [
+            5,
+            8,
+            25,
+            11
+          ]
+        },
+        {
+          "text": "&",
+          "confidence": 36.0,
+          "bbox": [
+            33,
+            4,
+            4,
+            18
+          ]
+        },
+        {
+          "text": "20.00",
+          "confidence": 96.0,
+          "bbox": [
+            46,
+            7,
+            33,
+            11
+          ]
+        },
+        {
+          "text": "(incl.",
+          "confidence": 91.0,
+          "bbox": [
+            84,
+            6,
+            24,
+            13
+          ]
+        },
+        {
+          "text": "of",
+          "confidence": 97.0,
+          "bbox": [
+            113,
+            6,
+            10,
+            11
+          ]
+        },
+        {
+          "text": "all",
+          "confidence": 93.0,
+          "bbox": [
+            127,
+            6,
+            11,
+            11
+          ]
+        },
+        {
+          "text": "taxes)",
+          "confidence": 96.0,
+          "bbox": [
+            142,
+            6,
+            32,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "zone_type": "mfg_date_block",
+      "bbox": [
+        38,
+        338,
+        105,
+        13
+      ],
+      "text": "MED:\n10/07/2024",
+      "confidence": 95.5,
+      "source": "heuristic",
+      "words": [
+        {
+          "text": "MED:",
+          "confidence": 95.0,
+          "bbox": [
+            6,
+            5,
+            28,
+            18
+          ]
+        },
+        {
+          "text": "10/07/2024",
+          "confidence": 96.0,
+          "bbox": [
+            41,
+            6,
+            69,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "zone_type": "expiry_date_block",
+      "bbox": [
+        38,
+        356,
+        116,
+        13
+      ],
+      "text": "USE/BY:\n09/01/2025",
+      "confidence": 65.5,
+      "source": "heuristic",
+      "words": [
+        {
+          "text": "USE/BY:",
+          "confidence": 40.0,
+          "bbox": [
+            6,
+            7,
+            41,
+            18
+          ]
+        },
+        {
+          "text": "09/01/2025",
+          "confidence": 91.0,
+          "bbox": [
+            53,
+            0,
+            69,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "zone_type": "batch_block",
+      "bbox": [
+        38,
+        374,
+        133,
+        12
+      ],
+      "text": "Batch\nNo.:\nLT240710A",
+      "confidence": 81.33,
+      "source": "heuristic",
+      "words": [
+        {
+          "text": "Batch",
+          "confidence": 77.0,
+          "bbox": [
+            6,
+            6,
+            30,
+            11
+          ]
+        },
+        {
+          "text": "No.:",
+          "confidence": 77.0,
+          "bbox": [
+            41,
+            7,
+            22,
+            10
+          ]
+        },
+        {
+          "text": "LT240710A",
+          "confidence": 90.0,
+          "bbox": [
+            72,
+            6,
+            67,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "zone_type": "manufacturer_address_block",
+      "bbox": [
+        36,
+        396,
+        232,
+        14
+      ],
+      "text": "Manufactured\nby:\nPepsiCo\nIndia\nHoldings\nPvt.\nLtd.",
+      "confidence": 93.29,
+      "source": "heuristic",
+      "words": [
+        {
+          "text": "Manufactured",
+          "confidence": 94.0,
+          "bbox": [
+            6,
+            7,
+            64,
+            10
+          ]
+        },
+        {
+          "text": "by:",
+          "confidence": 94.0,
+          "bbox": [
+            74,
+            7,
+            14,
+            13
+          ]
+        },
+        {
+          "text": "PepsiCo",
+          "confidence": 93.0,
+          "bbox": [
+            92,
+            7,
+            37,
+            12
+          ]
+        },
+        {
+          "text": "India",
+          "confidence": 96.0,
+          "bbox": [
+            132,
+            7,
+            22,
+            10
+          ]
+        },
+        {
+          "text": "Holdings",
+          "confidence": 96.0,
+          "bbox": [
+            158,
+            7,
+            41,
+            13
+          ]
+        },
+        {
+          "text": "Pvt.",
+          "confidence": 89.0,
+          "bbox": [
+            202,
+            7,
+            17,
+            10
+          ]
+        },
+        {
+          "text": "Ltd.",
+          "confidence": 91.0,
+          "bbox": [
+            222,
+            6,
+            16,
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "full_image_ocr": {
+    "text": ".\nf\n:\nA\ni\nSpanish\n\u00a2\n>\nTomato\nTango\n4\n-\na\nNet\nQuantity:\n52\ng\nle]\nMRP\n%\n20.00\n(incl.\nof\nall\ntaxes)\nMFD:\n10/07/2024\nUSEBY:\n09/01/2025\nBatch\nNo.:\nL1240710A\nManufactured\nby:\nPepsiCo\nIndia\nHoldings\nPvt.\nLid\nVilage\nChanno,\nPatiala\n=\n147105,\nPunjab,\nIndia\nB)\nCorcassrtin.",
+    "mean_confidence": 57.52,
+    "word_count": 48
+  },
+  "warnings": [
+    "No words recognised in this zone crop"
+  ]
+}

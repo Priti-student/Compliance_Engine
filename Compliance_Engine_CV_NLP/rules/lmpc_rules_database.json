@@ -1,0 +1,286 @@
+{
+  "database_meta": {
+    "title": "Legal Metrology (Packaged Commodities) Rules, 2011 — Digitized Compliance Rule Database",
+    "version": "1.0.0",
+    "last_updated": "2026-09-06",
+    "primary_source": "GSR 202(E) dated 07-03-2011, Legal Metrology (Packaged Commodities) Rules, 2011, effective 01-04-2011",
+    "disclaimer": "This database was compiled from the original 2011 gazette notification text and publicly available legal-commentary summaries of subsequent amendment notifications. Rule numbering for clauses added after 2011 (e.g. e-commerce declarations, unit sale price, combination/group packages) has shifted across several amendments. Before production deployment, cross-verify every rule_reference and threshold value against the current consolidated text published by the Department of Consumer Affairs / e-Gazette, and re-confirm with legal counsel. Treat this file as a first working draft of the rule engine's data layer, not a legal authority.",
+    "schema_notes": "Each rule object maps to one automated check in the compliance engine. 'validation_logic.type' tells the engine which checker module to invoke (presence_check, format_regex, numeral_height_check, font_height_check, spacing_check, enum_check)."
+  },
+
+  "mandatory_declarations": [
+    {
+      "rule_id": "MD-01",
+      "rule_reference": "Rule 6(1)(a)",
+      "field_name": "manufacturer_packer_importer",
+      "title": "Name and address of manufacturer / packer / importer",
+      "requirement": "Every package must state the name and complete address of the manufacturer; if the manufacturer is not the packer, both manufacturer and packer name/address; for imported packages, the name and address of the importer.",
+      "applies_to": ["retail_package"],
+      "exemptions": ["Food articles (governed instead by FSSAI labelling rules)", "Packages of capacity 5 cubic cm or less (mark/inscription sufficient)"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "presence_and_ner_check", "entity": "ORG_ADDRESS", "notes": "OCR block must contain a resolvable name + postal address (street/PIN)."}
+    },
+    {
+      "rule_id": "MD-02",
+      "rule_reference": "Rule 6(1)(b)",
+      "field_name": "generic_name_of_commodity",
+      "title": "Common or generic name of the commodity",
+      "requirement": "The common/generic name of the commodity must be declared; if a package contains more than one product, the name and quantity/number of each must be stated.",
+      "applies_to": ["retail_package"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "presence_check", "entity": "PRODUCT_NAME"}
+    },
+    {
+      "rule_id": "MD-03",
+      "rule_reference": "Rule 6(1)(c)",
+      "field_name": "net_quantity",
+      "title": "Net quantity declaration",
+      "requirement": "Net quantity in standard unit of weight/measure, or number of items if sold by count, excluding packaging/wrapper weight.",
+      "applies_to": ["retail_package"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "presence_and_unit_check", "allowed_units": ["g", "kg", "ml", "l", "cm", "m", "sq cm", "sq m", "number", "N", "U"], "notes": "Reject non-SI units (e.g. dozen, score, gross) per Rule 13(4); flag qualifying words like 'minimum'/'about'/'approx' per Rule 12(6)."}
+    },
+    {
+      "rule_id": "MD-04",
+      "rule_reference": "Rule 6(1)(d)",
+      "field_name": "month_year_of_manufacture",
+      "title": "Month and year of manufacture / pre-packing / import",
+      "requirement": "Month and year the commodity was manufactured, pre-packed, or imported.",
+      "applies_to": ["retail_package"],
+      "exemptions": ["Bidis and incense sticks", "Domestic LPG cylinders (14.2kg/5kg) marketed by PSUs", "Spare parts/accessories used for servicing under warranty, not sold to end customer (added 2023 amendment)"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [
+        {"amendment": "LMPC (Amendment) Rules, 2023", "gazette_ref": "notified 06-10-2023, effective 01-01-2024", "change": "Added exemption for warranty spare parts/accessories not sold to end customer; clarified that for electronic products this date must be clearly visible on the retail package."}
+      ],
+      "validation_logic": {"type": "presence_and_date_format_check", "format": "MM/YYYY or month name + year"}
+    },
+    {
+      "rule_id": "MD-05",
+      "rule_reference": "Rule 6(1)(e) read with Rule 2(m)",
+      "field_name": "mrp",
+      "title": "Maximum Retail Price (MRP), inclusive of all taxes",
+      "requirement": "Retail sale price must be printed as 'Maximum Retail Price Rs. ... inclusive of all taxes' or 'MRP Rs. ... incl. of all taxes', with paise rounding: below 50 paise rounded down to preceding rupee, 50-95 paise rounded to 50 paise.",
+      "applies_to": ["retail_package"],
+      "exemptions": ["Bidis", "Domestic LPG cylinders priced under the Administrative Price Mechanism", "Alcoholic beverages/spirituous liquor (governed by State Excise laws unless those laws are silent, in which case this rule applies)"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "format_regex_and_value_check", "regex": "(MRP|Maximum\\s+Retail\\s+Price)\\s*(Rs\\.?|₹)\\s*[0-9]+(\\.[0-9]{1,2})?.*(incl(usive)?\\.?\\s*of\\s*all\\s*taxes)", "notes": "Flag missing 'inclusive of all taxes' qualifier and incorrect paise rounding."}
+    },
+    {
+      "rule_id": "MD-06",
+      "rule_reference": "Rule 6(1)(f)",
+      "field_name": "dimensions",
+      "title": "Dimensions of commodity (where size is relevant)",
+      "requirement": "Where size/dimensions of the commodity are relevant to the sale, dimensions must be declared; if pieces differ in size, each must be stated.",
+      "applies_to": ["retail_package"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "conditional_presence_check", "condition": "product_category in ['textiles','bedsheets','sarees','towels']"}
+    },
+    {
+      "rule_id": "MD-07",
+      "rule_reference": "Rule 6(2)",
+      "field_name": "consumer_care_details",
+      "title": "Consumer/customer care details",
+      "requirement": "Name, address, telephone number, and e-mail address (if available) of the person/office that can be contacted for consumer complaints.",
+      "applies_to": ["retail_package"],
+      "in_force_since": "2011-04-01",
+      "amended_by": [],
+      "validation_logic": {"type": "presence_and_contact_format_check", "entity": "PHONE_OR_EMAIL"}
+    },
+    {
+      "rule_id": "MD-08",
+      "rule_reference": "Rule 6 (expanded, post-2017 amendment)",
+      "field_name": "country_of_origin",
+      "title": "Country of origin (imported products)",
+      "requirement": "Imported packages must declare the country of origin/manufacture/assembly.",
+      "applies_to": ["retail_package", "imported_package"],
+      "in_force_since": "amendment period 2017-2018 (exact clause number to be confirmed against consolidated text)",
+      "amended_by": [],
+      "validation_logic": {"type": "conditional_presence_check", "condition": "package_flagged_as_imported == true"}
+    },
+    {
+      "rule_id": "MD-09",
+      "rule_reference": "Rule 6(1), sub-rule extended by 2017 amendment (effective 01-01-2018)",
+      "field_name": "ecommerce_declarations",
+      "title": "Mandatory declarations on e-commerce product listings",
+      "requirement": "Goods displayed for sale on digital/e-commerce platforms must carry the same mandatory declarations as physical retail packages (manufacturer/packer/importer, generic name, net quantity, MRP, month/year, consumer care) on the listing page itself.",
+      "applies_to": ["ecommerce_listing"],
+      "in_force_since": "2018-01-01",
+      "amended_by": [
+        {"amendment": "LMPC (Amendment) Rules, 2023", "gazette_ref": "effective 01-01-2024", "change": "Added Rule 26(g) exemption for loose commodities ordered through e-commerce channels where the consumer is aware of type/quantity, provided the listing still bears name/address of responsible entity with country of origin, and net quantity."}
+      ],
+      "validation_logic": {"type": "presence_check_on_listing_text", "notes": "Applies to product description/listing text extraction, not just package image."}
+    },
+    {
+      "rule_id": "MD-10",
+      "rule_reference": "Rule 6(11) (as introduced by LMPC (Amendment) Rules, 2021/2022)",
+      "field_name": "unit_sale_price",
+      "title": "Unit sale price (per standard unit)",
+      "requirement": "Declare unit sale price in rupees, rounded to nearest two decimal places: per gram (net qty < 1kg) or per kg (>1kg); per cm (length < 1m) or per metre (>1m); per ml (volume <1l) or per litre (>1l); per number/unit for count-based items.",
+      "applies_to": ["retail_package"],
+      "exemptions": ["Wholesale packages (Rule 2(r))", "Packages where retail sale price equals unit sale price", "Alcoholic beverages/spirituous liquor governed by State Excise law"],
+      "in_force_since": "2023-01-01 (effective date pushed back multiple times: originally 01-04-2022, then 01-10-2022, 01-12-2022, finally 01-01-2023)",
+      "amended_by": [
+        {"amendment": "LMPC (Packaged Commodities) Amendment Rules, 2021", "gazette_ref": "notified 02-11-2021", "change": "Introduced unit sale price requirement"},
+        {"amendment": "LMPC Amendment Rules, 2022", "gazette_ref": "notified 28-03-2022", "change": "Extended combination/grouped-package compliance; delayed effective date to 01-10-2022"},
+        {"amendment": "LMPC Amendment (Amendment) Rules, 2022", "gazette_ref": "notified 30-09-2022", "change": "Delayed effective date to 01-12-2022; enabled QR-code disclosure option for electronic devices"},
+        {"amendment": "LMPC Amendment (Amendment) Rules, 2023", "gazette_ref": "notified 24-03-2023", "change": "Final effective date fixed at 01-01-2023 in some notifications / 01-06-2023 in others - confirm final date against gazette"}
+      ],
+      "validation_logic": {"type": "format_regex_and_cross_check", "notes": "Cross-check unit_sale_price times net_quantity approx equals MRP within rounding tolerance."}
+    },
+    {
+      "rule_id": "MD-11",
+      "rule_reference": "Rule 6(1) (Second Schedule references omitted by 2023 amendment)",
+      "field_name": "standard_package_size",
+      "title": "Standard package quantities for specified commodities",
+      "requirement": "[HISTORICAL - omitted 01-01-2024] Certain commodities (baby food, biscuits, bread, butter, cereals, coffee, tea, edible oil, milk powder, detergents, atta/rawa/suji, salt, soaps, aerated drinks, mineral water, cement, paints) were required to be packed only in specified standard quantities per the Second Schedule.",
+      "applies_to": ["retail_package"],
+      "status": "omitted",
+      "in_force_since": "2011-04-01",
+      "amended_by": [
+        {"amendment": "LMPC (Packaged Commodities) Amendment Rules, 2022 / 2023", "gazette_ref": "effective 01-01-2024", "change": "Second Schedule (standard package sizes) omitted entirely - manufacturers may now use any pack size, subject to other declaration requirements."}
+      ],
+      "validation_logic": {"type": "disabled", "notes": "Retain for historical audit only; do not flag non-standard pack sizes for products dated on/after 2024-01-01."}
+    }
+  ],
+
+  "font_size_and_legibility_rules": {
+    "general_letter_height": {
+      "rule_reference": "Rule 7(3)",
+      "requirement": "Height of letters in any declaration shall not be less than 1 mm; where the declaration is blown, formed, molded, embossed or perforated, height shall not be less than 2 mm. Width of any letter/numeral shall not be less than one-third of its height (except numeral '1' and letters i, I, l).",
+      "validation_logic": {"type": "font_height_check", "min_height_mm": {"normal": 1, "molded_or_embossed": 2}, "min_width_to_height_ratio": 0.333}
+    },
+    "numeral_height_by_weight_or_volume": {
+      "rule_reference": "Rule 7(2)(i), Table I",
+      "requirement": "Minimum height of numerals in the net quantity declaration, when net quantity is declared by weight or volume.",
+      "table": [
+        {"slab": "Up to 200 g / ml", "min_height_mm_normal": 1, "min_height_mm_molded_or_embossed": 2},
+        {"slab": "Above 200 g/ml up to 500 g/ml", "min_height_mm_normal": 2, "min_height_mm_molded_or_embossed": 4},
+        {"slab": "Above 500 g/ml", "min_height_mm_normal": 4, "min_height_mm_molded_or_embossed": 6}
+      ],
+      "validation_logic": {"type": "numeral_height_check", "keyed_by": "declared_net_quantity_g_or_ml"}
+    },
+    "numeral_height_by_length_area_or_number": {
+      "rule_reference": "Rule 7(2)(ii), Table II",
+      "requirement": "Minimum height of numerals in the net quantity declaration, when quantity is declared by length, area, or number - keyed to the area of the principal display panel.",
+      "table": [
+        {"slab": "Up to 100 cm2", "min_height_mm_normal": 1, "min_height_mm_molded_or_embossed": 2},
+        {"slab": "Above 100 cm2 up to 500 cm2", "min_height_mm_normal": 2, "min_height_mm_molded_or_embossed": 4},
+        {"slab": "Above 500 cm2 up to 2500 cm2", "min_height_mm_normal": 4, "min_height_mm_molded_or_embossed": 6},
+        {"slab": "Above 2500 cm2", "min_height_mm_normal": 6, "min_height_mm_molded_or_embossed": 6}
+      ],
+      "validation_logic": {"type": "numeral_height_check", "keyed_by": "principal_display_panel_area_cm2", "notes": "Requires computer-vision estimate of PDP area from the image plus a calibration reference (coin/ruler) to convert pixel height to mm."}
+    },
+    "advertisement_font_parity": {
+      "rule_reference": "Rule 31(2)",
+      "requirement": "In any advertisement stating the retail sale price, the font size of the net quantity declaration must be the same as that of the retail sale price.",
+      "applies_to": ["advertisement_creative"],
+      "validation_logic": {"type": "relative_font_size_check", "compare": ["mrp_font_height_px", "net_quantity_font_height_px"], "tolerance_percent": 5}
+    }
+  },
+
+  "placement_and_manner_rules": [
+    {
+      "rule_id": "PL-01",
+      "rule_reference": "Rule 8(1)",
+      "title": "All declarations on principal display panel",
+      "requirement": "Every declaration must appear on the Principal Display Panel (PDP), either fully grouped in one place, or with pre-printed info grouped in one place and on-line/variable info grouped in another.",
+      "validation_logic": {"type": "region_membership_check", "notes": "Detected declaration text-regions should fall within the identified PDP bounding box."}
+    },
+    {
+      "rule_id": "PL-02",
+      "rule_reference": "Rule 8(1)(a)-(b)",
+      "title": "Clear space around net quantity declaration",
+      "requirement": "The area surrounding the net quantity declaration must be free of other printed information: above and below by at least the height of the numeral used; to the left and right by at least twice that height.",
+      "validation_logic": {"type": "spacing_check", "min_vertical_clearance": "1x numeral height", "min_horizontal_clearance": "2x numeral height"}
+    },
+    {
+      "rule_id": "PL-03",
+      "rule_reference": "Rule 9(1)(a)-(b)",
+      "title": "Legible, prominent, contrasting declarations",
+      "requirement": "Declarations must be legible and prominent; numerals of MRP and net quantity must be printed/painted/inscribed in a colour that contrasts conspicuously with the label background (except where blown/formed/molded on glass/plastic, or where hand-written but clear and unambiguous).",
+      "validation_logic": {"type": "contrast_ratio_check", "min_contrast_ratio": 4.5, "notes": "WCAG-style contrast ratio used as an engineering proxy; not itself a statutory numeric threshold - calibrate against enforcement precedent."}
+    },
+    {
+      "rule_id": "PL-04",
+      "rule_reference": "Rule 9(2)",
+      "title": "No declaration readable only through liquid",
+      "requirement": "A declaration must not be positioned such that it can only be read through a liquid commodity inside the package.",
+      "validation_logic": {"type": "manual_flag", "notes": "Difficult to automate reliably; flag for human review when liquid product plus declaration appears to sit behind fill line."}
+    },
+    {
+      "rule_id": "PL-05",
+      "rule_reference": "Rule 9(4)",
+      "title": "Language requirement",
+      "requirement": "Declarations must be in Hindi (Devanagari script) or English; other languages may be used in addition, not instead.",
+      "validation_logic": {"type": "language_detection_check", "required_one_of": ["hi", "en"], "additional_allowed": true}
+    },
+    {
+      "rule_id": "PL-06",
+      "rule_reference": "Rule 6(3)-(4)",
+      "title": "No individual stickers altering mandatory declarations",
+      "requirement": "Stickers may not be affixed to alter/make a mandatory declaration, except a sticker reducing MRP (which must not cover the original MRP declaration). Stickers may be used for non-mandatory declarations.",
+      "validation_logic": {"type": "visual_anomaly_check", "notes": "Detect sticker/overlay regions via edge/texture discontinuity over MRP or other mandatory fields; flag for manual review."}
+    }
+  ],
+
+  "wholesale_package_rules": [
+    {
+      "rule_id": "WP-01",
+      "rule_reference": "Rule 24(a)-(c)",
+      "title": "Wholesale package declarations",
+      "requirement": "Every wholesale package must declare: (a) name and address of manufacturer/importer/packer, (b) identity of the commodity, (c) total number of retail packages contained, or net quantity of the commodity in standard units.",
+      "applies_to": ["wholesale_package"],
+      "validation_logic": {"type": "presence_check"}
+    }
+  ],
+
+  "exemptions": [
+    {"rule_reference": "Rule 3(a)", "condition": "Package net quantity greater than 25 kg / 25 litre (or up to 50 kg for cement/fertilizer bags)", "effect": "Chapter II (retail package declarations) does not apply."},
+    {"rule_reference": "Rule 3(b)", "condition": "Commodity intended for industrial or institutional consumers", "effect": "Chapter II does not apply."},
+    {"rule_reference": "Rule 26(a)", "condition": "Net weight/measure 10 g or 10 ml or less", "effect": "Fully exempt (MRP and net quantity still required for the 10-20 g/ml band per subsequent proviso)."},
+    {"rule_reference": "Rule 26(b)", "condition": "Fast food packed by restaurant/hotel", "effect": "Exempt."},
+    {"rule_reference": "Rule 26(c)", "condition": "Scheduled/non-scheduled drug formulations under Drugs (Price Control) Order, 1995", "effect": "Exempt."},
+    {"rule_reference": "Rule 26(d)", "condition": "Agricultural farm produce in packages above 50 kg", "effect": "Exempt."},
+    {"rule_reference": "Rule 26(g) - added by LMPC (Amendment) Rules, 2023, effective 2024-01-01", "condition": "Loose commodities ordered through e-commerce where consumer is aware of type/quantity", "effect": "Exempt from full Chapter II, but must still bear name/address (with country of origin if imported) and net quantity."}
+  ],
+
+  "penalty_reference": [
+    {"rule_reference": "Rule 32(1)", "violation": "Contravention of registration/advertisement rules (Rules 27-31)", "penalty": "Fine of Rs 4,000"},
+    {"rule_reference": "Rule 32(2)", "violation": "Contravention of any other rule with no penalty prescribed elsewhere", "penalty": "Fine of Rs 2,000"},
+    {"rule_reference": "Legal Metrology Act 2009, relevant sections (confirm exact section numbers)", "violation": "Sale of non-standard packages / incorrect quantity declarations", "penalty": "Fines escalating with repeat offences; imprisonment possible for repeat/serious offences - confirm against Act text before use in report generation."}
+  ],
+
+  "amendment_history": [
+    {"date": "2011-03-07", "instrument": "GSR 202(E)", "title": "Legal Metrology (Packaged Commodities) Rules, 2011 (original notification)", "effective_from": "2011-04-01", "summary": "Base rules established: Chapters on retail packages, wholesale packages, export/import, exemptions, registration, general provisions; First-Seventh Schedules."},
+    {"date": "2011-09-30", "instrument": "GSR 734(E)", "effective_from": "2011-09-30", "summary": "Extended time period for exhausting old packaging material without correction."},
+    {"date": "2011-10-24", "instrument": "GSR 748(E)", "effective_from": "2012-07-01", "summary": "Withdrew non-standard-pack-size declaration proviso and rubber-stamp month/year proviso; amended Rule 12(6) wording on misleading quantity words; changed ice cream unit of measure from volume to weight (Fourth Schedule); amended Rule 19(8) wording on release of seized packages."},
+    {"date": "2017-06-29", "instrument": "LMPC (Amendment) Rules, 2017", "effective_from": "2018-01-01", "summary": "Extended mandatory declarations to goods sold via e-commerce/digital platforms."},
+    {"date": "2021-11-02", "instrument": "LMPC (Packaged Commodities) Amendment Rules, 2021", "effective_from": "2022-04-01 (subsequently deferred)", "summary": "Introduced unit sale price declaration requirement alongside MRP."},
+    {"date": "2022-03-28", "instrument": "LMPC Amendment Rules, 2022", "effective_from": "deferred to 2022-10-01", "summary": "Added compliance requirement for grouped/combination retail packages; reinforced unit price declaration in INR."},
+    {"date": "2022-09-30", "instrument": "LMPC Amendment (Amendment) Rules, 2022 (Second Amendment)", "effective_from": "deferred to 2022-12-01", "summary": "Permitted QR-code disclosure of descriptive/elaborative information for electronic devices, with key information still printed on the device/package."},
+    {"date": "2023-03-24", "instrument": "LMPC Amendment (Amendment) Rules, 2023", "effective_from": "deferred to 2023-06-01 (later notifications reference 2023-07-01 / 2023-01-01 - reconcile with gazette)", "summary": "Further deferred effective date of unit sale price / grouped package provisions; garment/hosiery sold loose exempted."},
+    {"date": "2023-09-30", "instrument": "LMPC (Packaged Commodities) Amendment Rules, 2023", "effective_from": "deferred to 2024-01-01", "summary": "Omitted the Second Schedule (standard package sizes) entirely."},
+    {"date": "2023-10-06", "instrument": "LMPC (Packaged Commodities) Amendment Rules, 2023 (main substantive amendment)", "effective_from": "2024-01-01", "summary": "Introduced defined terms 'combination package', 'group package', 'multi-piece package'; amended Rule 6(1)(d) to exempt warranty spare parts/accessories from month-year declaration and to require visible month-year for electronic products; amended Rule 26 to add exemption (g) for loose e-commerce commodities; amendments to Fourth Schedule for edible oil, vanaspati, butter oil."}
+  ],
+
+  "maximum_permissible_error_reference": {
+    "rule_reference": "First Schedule, Table I (by weight/volume)",
+    "note": "Not a label-declaration check, but useful if the system is later extended to weight-verification workflows (out of scope for pure image/label scanning).",
+    "table": [
+      {"declared_quantity_range": "up to 50 g/ml", "max_error": "9% of declared quantity"},
+      {"declared_quantity_range": "50 to 100 g/ml", "max_error": "4.5 g/ml"},
+      {"declared_quantity_range": "100 to 200 g/ml", "max_error": "4.5% of declared quantity"},
+      {"declared_quantity_range": "200 to 300 g/ml", "max_error": "9 g/ml"},
+      {"declared_quantity_range": "300 to 500 g/ml", "max_error": "3% of declared quantity"},
+      {"declared_quantity_range": "500 to 1000 g/ml", "max_error": "15 g/ml"},
+      {"declared_quantity_range": "1000 to 10000 g/ml", "max_error": "1.5% of declared quantity"},
+      {"declared_quantity_range": "10000 to 15000 g/ml", "max_error": "150 g/ml"},
+      {"declared_quantity_range": "more than 15000 g/ml", "max_error": "1.0% of declared quantity"}
+    ]
+  }
+}
