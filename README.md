@@ -44,12 +44,12 @@ stored in a searchable repository with an enforcement dashboard.
         │
         ▼  POST /compliance/scan  (image + metadata)
 ┌───────────────────────────────┐         ┌─────────────────────────────────────┐
-│ CV/OCR ENGINE  (:8000)        │   HTTP  │ LMPC COMPLIANCE PLATFORM  (:8001)     │
-│ · quality gate                │ ──────► │ · FastAPI REST API                   │
+│ CV/OCR ENGINE  (:8000)        │   HTTP  │ LMPC COMPLIANCE PLATFORM  (:8001)   │
+│ · quality gate                │ ──────► │ · FastAPI REST API                  │
 │ · OpenCV preprocessing        │  (read- │ · Auth (JWT) + RBAC                 │
 │ · zone detection              │  only)  │ · PostgreSQL persistence            │
 │ · Tesseract OCR               │         │ · S3 / local object storage         │
-│ · font metrics & calibration │         │ · PDF / XLSX / JSON reports         │
+│ · font metrics & calibration  │         │· PDF / XLSX / JSON reports          │
 │ · declaration extraction      │         │ · Dashboards & product search       │
 │ · rule-engine compliance      │         │ · React + Tailwind + Recharts UI    │
 └───────────────────────────────┘         │   (web app on :5173)                │
