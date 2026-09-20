@@ -3,16 +3,32 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-100 text-slate-800;
+  @apply bg-[#f5f8f6] text-slate-800;
 }
 
+.login-scene {
+  position: relative;
+  overflow: hidden;
+  background: url('/assets/login-background.jpeg') center / cover no-repeat;
+}
+
+.login-scene__shade {
+  background: linear-gradient(90deg, rgba(2, 24, 17, 0.22), rgba(2, 24, 17, 0.04) 58%, rgba(2, 24, 17, 0.12));
+}
+
+.login-input {
+  @apply block w-full rounded-lg border border-slate-200 bg-[#f7f8fb] py-3 text-[15px] text-slate-800 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-[#15966a] focus:bg-white focus:ring-4 focus:ring-[#15966a]/10;
+}
+
+.login-scene form svg { width: 1.4rem; height: 1.4rem; }
+
 .card {
-  @apply bg-white rounded-lg border border-slate-200 shadow-sm;
+  @apply rounded-lg border border-emerald-100 bg-white shadow-sm;
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 rounded-md bg-gov-blue px-4 py-2 text-sm font-medium
-    text-white hover:bg-gov-dark disabled:opacity-50 transition;
+  @apply inline-flex items-center gap-2 rounded-md bg-[#075a3f] px-4 py-2 text-sm font-medium
+    text-white transition hover:bg-[#064b35] disabled:opacity-50;
 }
 
 .btn-ghost {
@@ -22,7 +38,7 @@ body {
 
 .input {
   @apply w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none
-    focus:ring-2 focus:ring-gov-blue/40;
+    focus:ring-2 focus:ring-emerald-600/30;
 }
 
 .label {

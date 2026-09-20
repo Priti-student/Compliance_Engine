@@ -48,9 +48,9 @@ export default function Shell() {
 
   if (!ready) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#f5f8f6]">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-100 border-t-blue-700" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-emerald-100 border-t-emerald-700" />
           <p className="text-sm text-slate-500">Loading…</p>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function Shell() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#f5f8f6]">
 
       {/* =====================================================
           MOBILE TOP BAR
@@ -80,13 +80,13 @@ export default function Shell() {
         <div className="flex items-center gap-3">
 
           <div className="relative h-9 w-9 shrink-0">
-            <div className="absolute left-0 top-1 h-7 w-7 rounded-full bg-blue-200" />
-            <div className="absolute left-2.5 top-1 h-7 w-7 rounded-full bg-blue-600" />
+            <div className="absolute left-0 top-1 h-7 w-7 rounded-full bg-[#b6e878]" />
+            <div className="absolute left-2.5 top-1 h-7 w-7 rounded-full bg-[#16a56d]" />
           </div>
 
           <div>
-            <p className="text-lg font-bold leading-none text-[#09265A]">
-              Legal<span className="text-blue-600">Vision</span>
+            <p className="text-lg font-bold leading-none text-[#12382c]">
+              Legal<span className="text-[#159765]">Vision</span>
             </p>
 
             <p className="mt-1 text-[9px] uppercase tracking-wider text-slate-400">
@@ -100,7 +100,7 @@ export default function Shell() {
         <button
           type="button"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#09265A] transition hover:bg-blue-50"
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-100 bg-white text-[#075a3f] transition hover:bg-emerald-50"
           aria-label="Toggle navigation"
         >
           {mobileOpen ? (
@@ -143,12 +143,12 @@ export default function Shell() {
 
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-[#061B41]/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#032f22]/60 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
 
           {/* Sidebar */}
-          <aside className="absolute left-0 top-0 flex h-full w-[280px] flex-col bg-[#061B41] text-white shadow-2xl">
+          <aside className="absolute left-0 top-0 flex h-full w-[280px] flex-col bg-[#032f22] text-white shadow-2xl">
 
             {/* Mobile sidebar header */}
             <div className="border-b border-white/10 px-5 py-5">
@@ -158,13 +158,13 @@ export default function Shell() {
                 <div className="flex items-center gap-3">
 
                   <div className="relative h-9 w-9">
-                    <div className="absolute left-0 top-1 h-7 w-7 rounded-full bg-blue-200" />
-                    <div className="absolute left-2.5 top-1 h-7 w-7 rounded-full bg-blue-500" />
+                    <div className="absolute left-0 top-1 h-7 w-7 rounded-full bg-[#b6e878]" />
+                    <div className="absolute left-2.5 top-1 h-7 w-7 rounded-full bg-[#16a56d]" />
                   </div>
 
                   <div>
                     <p className="text-lg font-bold">
-                      Legal<span className="text-blue-400">Vision</span>
+                      Legal<span className="text-[#48ce8d]">Vision</span>
                     </p>
 
                     <p className="text-[9px] uppercase tracking-wider text-blue-200/60">
@@ -218,8 +218,8 @@ export default function Shell() {
                   className={({ isActive }) =>
                     `group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all ${
                       isActive
-                        ? "bg-blue-500 text-white shadow-lg shadow-blue-950/30"
-                        : "text-blue-100/70 hover:bg-white/[0.08] hover:text-white"
+                        ? "bg-[#08734c] text-white shadow-lg shadow-emerald-950/30"
+                        : "text-emerald-50/70 hover:bg-white/[0.08] hover:text-white"
                     }`
                   }
                 >
@@ -341,7 +341,7 @@ export default function Shell() {
         {/* =====================================================
             DESKTOP SIDEBAR
         ====================================================== */}
-        <aside className="hidden w-64 shrink-0 flex-col bg-[#061B41] text-white lg:flex">
+        <aside className="hidden w-64 shrink-0 flex-col bg-[#032f22] text-white lg:flex">
 
           {/* Logo */}
           <div className="border-b border-white/10 px-5 py-6">
@@ -349,13 +349,13 @@ export default function Shell() {
             <div className="flex items-center gap-3">
 
               <div className="relative h-10 w-10 shrink-0">
-                <div className="absolute left-0 top-1 h-8 w-8 rounded-full bg-blue-200" />
-                <div className="absolute left-3 top-1 h-8 w-8 rounded-full bg-blue-500" />
+                <div className="absolute left-0 top-1 h-8 w-8 rounded-full bg-[#b6e878]" />
+                <div className="absolute left-3 top-1 h-8 w-8 rounded-full bg-[#16a56d]" />
               </div>
 
               <div>
                 <p className="text-xl font-bold tracking-tight">
-                  Legal<span className="text-blue-400">Vision</span>
+                  Legal<span className="text-[#48ce8d]">Vision</span>
                 </p>
 
                 <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-blue-200/60">
@@ -365,7 +365,7 @@ export default function Shell() {
 
             </div>
 
-            <div className="mt-5 h-px bg-gradient-to-r from-blue-400/50 to-transparent" />
+            <div className="mt-5 h-px bg-gradient-to-r from-[#48ce8d]/50 to-transparent" />
 
             <p className="mt-4 text-xs leading-5 text-blue-200/60">
               Legal Metrology (Packaged Commodities) Rules, 2011
@@ -389,8 +389,8 @@ export default function Shell() {
                 className={({ isActive }) =>
                   `group relative flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all duration-200 ${
                     isActive
-                      ? "bg-blue-500 text-white shadow-lg shadow-blue-950/30"
-                      : "text-blue-100/65 hover:bg-white/[0.07] hover:text-white"
+                      ? "bg-[#08734c] text-white shadow-lg shadow-emerald-950/30"
+                      : "text-emerald-50/65 hover:bg-white/[0.07] hover:text-white"
                   }`
                 }
               >
@@ -404,7 +404,7 @@ export default function Shell() {
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-base ${
                         isActive
                           ? "bg-white/15"
-                          : "bg-white/[0.05] group-hover:bg-blue-500/20"
+                          : "bg-white/[0.05] group-hover:bg-emerald-400/20"
                       }`}
                     >
                       {n.icon}
@@ -444,7 +444,7 @@ export default function Shell() {
 
               <div className="flex items-center gap-3">
 
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-700 text-sm font-bold shadow-lg">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#48ce8d] to-[#08734c] text-sm font-bold shadow-lg">
                   {user.full_name?.charAt(0)?.toUpperCase()}
                 </div>
 
@@ -514,7 +514,7 @@ export default function Shell() {
         <div className="flex min-w-0 flex-1 flex-col">
 
           {/* Desktop Header */}
-          <header className="sticky top-0 z-20 hidden min-h-[72px] items-center justify-between border-b border-slate-200 bg-white/95 px-6 backdrop-blur-md sm:flex xl:px-8">
+          <header className="sticky top-0 z-20 hidden min-h-[72px] items-center justify-between border-b border-emerald-100 bg-white/95 px-6 backdrop-blur-md sm:flex xl:px-8">
 
             <div className="min-w-0">
 
@@ -522,7 +522,7 @@ export default function Shell() {
                 Enforcement Monitoring
               </p>
 
-              <p className="mt-0.5 text-sm font-semibold text-[#09265A]">
+              <p className="mt-0.5 text-sm font-semibold text-[#12382c]">
                 Legal Metrology Department
               </p>
 
@@ -532,17 +532,17 @@ export default function Shell() {
             {/* System Status */}
             <div className="flex items-center gap-3">
 
-              <div className="flex h-9 items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4">
+              <div className="flex h-9 items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-4">
 
                 <span className="relative flex h-2.5 w-2.5">
 
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
 
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-blue-500" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
 
                 </span>
 
-                <span className="text-xs font-medium text-[#0B3B82]">
+                <span className="text-xs font-medium text-[#075a3f]">
                   System Online
                 </span>
 

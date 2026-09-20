@@ -21,7 +21,7 @@ import { StatusBadge } from "../components/StatusBadge";
 import type { DashboardSummary, InspectionSummary } from "../types";
 
 const PIE_COLORS: Record<string, string> = {
-  compliant: "#2563EB",
+  compliant: "#08734C",
   non_compliant: "#DC2626",
   needs_review: "#F59E0B",
   not_applicable: "#64748B",
@@ -108,15 +108,15 @@ export default function DashboardPage() {
 
         <div className="min-w-0">
           <div className="mb-1 flex items-center gap-2">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#159765]" />
 
-            <p className="truncate text-xs font-semibold uppercase tracking-[0.15em] text-blue-600">
-              Enforcement Monitoring
+            <p className="truncate text-xs font-semibold uppercase tracking-[0.15em] text-[#159765]">
+              Welcome back
             </p>
           </div>
 
-          <h1 className="text-xl font-bold tracking-tight text-[#09265A] sm:text-2xl lg:text-3xl">
-            Enforcement Dashboard
+          <h1 className="text-xl font-bold tracking-tight text-[#12382c] sm:text-2xl lg:text-3xl">
+            Dashboard
           </h1>
 
           <p className="mt-1 text-xs text-slate-500 sm:text-sm">
@@ -126,7 +126,7 @@ export default function DashboardPage() {
 
         <Link
           to="/scan"
-          className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-[#0B3B82] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-700 sm:w-auto"
+          className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-[#075a3f] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-950/20 transition hover:bg-[#064b35] sm:w-auto"
         >
           <span className="text-lg leading-none">+</span>
           New Scan
@@ -155,7 +155,7 @@ export default function DashboardPage() {
 
       <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+        <div className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
           <StatCard
             label="Total inspections"
             value={s?.total_inspections ?? "–"}
@@ -163,7 +163,7 @@ export default function DashboardPage() {
           />
         </div>
 
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+        <div className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
           <StatCard
             label="Compliance rate"
             value={s ? `${s.compliance_rate_pct}%` : "–"}
@@ -172,7 +172,7 @@ export default function DashboardPage() {
           />
         </div>
 
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+        <div className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
           <StatCard
             label="Violations found"
             value={s?.total_violations ?? "–"}
@@ -181,7 +181,7 @@ export default function DashboardPage() {
           />
         </div>
 
-        <div className="min-w-0 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+        <div className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
           <StatCard
             label="Active officers"
             value={s?.active_officers ?? "–"}
@@ -200,12 +200,12 @@ export default function DashboardPage() {
       <div className="grid min-w-0 grid-cols-1 gap-4 xl:grid-cols-3">
 
         {/* Violation Trend */}
-        <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 xl:col-span-2">
+        <section className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm sm:p-5 xl:col-span-2">
 
           <div className="mb-4 flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
 
             <div className="min-w-0">
-              <h2 className="truncate font-semibold text-[#09265A]">
+              <h2 className="truncate font-semibold text-[#12382c]">
                 Violation Trend
               </h2>
 
@@ -214,7 +214,7 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <span className="w-fit shrink-0 rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+            <span className="w-fit shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-[#08734c]">
               Last 30 days
             </span>
 
@@ -240,7 +240,7 @@ export default function DashboardPage() {
 
                 <CartesianGrid
                   strokeDasharray="3 3"
-                  stroke="#E2E8F0"
+                  stroke="#dce9e1"
                   vertical={false}
                 />
 
@@ -265,7 +265,7 @@ export default function DashboardPage() {
                 <Tooltip
                   contentStyle={{
                     borderRadius: "12px",
-                    border: "1px solid #DBEAFE",
+                    border: "1px solid #d1e9dc",
                     boxShadow:
                       "0 10px 30px rgba(9,38,90,0.10)",
                     backgroundColor: "#ffffff",
@@ -282,7 +282,7 @@ export default function DashboardPage() {
                 <Line
                   type="monotone"
                   dataKey="violations"
-                  stroke="#2563EB"
+                  stroke="#08734C"
                   strokeWidth={3}
                   dot={false}
                   activeDot={{ r: 5 }}
@@ -292,7 +292,7 @@ export default function DashboardPage() {
                 <Line
                   type="monotone"
                   dataKey="missing"
-                  stroke="#60A5FA"
+                  stroke="#74b99a"
                   strokeWidth={2}
                   dot={false}
                   name="Missing"
@@ -307,10 +307,10 @@ export default function DashboardPage() {
 
 
         {/* Compliance Status */}
-        <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+        <section className="min-w-0 overflow-hidden rounded-2xl border border-emerald-100 bg-white p-4 shadow-sm sm:p-5">
 
           <div className="mb-2">
-            <h2 className="font-semibold text-[#09265A]">
+            <h2 className="font-semibold text-[#12382c]">
               Compliance Status
             </h2>
 
