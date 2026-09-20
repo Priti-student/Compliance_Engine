@@ -12,5 +12,3 @@ __pycache__/
 
 # --- Local secrets ------------------------------------------------------------
 .env
-Reference_image.jpeg
-Reference_inside_view.jpeg
