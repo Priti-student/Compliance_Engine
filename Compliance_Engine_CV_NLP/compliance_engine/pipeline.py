@@ -179,7 +179,7 @@ def run_full_pipeline(
     )
     report.violations = violations
     report.stats = stats
-    report.compliance_status = overall_status(stats)
+    report.compliance_status = overall_status(stats, violations)
 
     # --- Operator advice: low-quality captures shouldn't be read as a verdict.
     # A high glare ratio or very low OCR confidence means the label wasn't

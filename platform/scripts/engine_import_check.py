@@ -1,4 +1,4 @@
-"""Verify the CV/OCR engine imports and Tesseract resolves in engine_venv."""
+"""Verify the CV/OCR engine imports and Tesseract resolves in the engine venv."""
 import sys
 from pathlib import Path
 

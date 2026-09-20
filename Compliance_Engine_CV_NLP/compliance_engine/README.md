@@ -147,15 +147,24 @@ compliance_engine/
 - OCR accuracy is best on sharp, front-facing labels; busy small labels
   (e.g. `package_002.jpg`) still produce noise and can under-extract.
 - Font-size checks need calibration: use an in-image barcode (auto) or pass
-  `calibration_mm_per_px` (manual). Uncalibrated font rules are reported as
-  `needs_review`, not false "non_compliant".
+  `calibration_mm_per_px` (manual). When cv2.barcode cannot decode a small/
+  curved code, a second fallback measures the EAN/UPC digit run from OCR
+  (`method: ean_upc_barcode_ocr`) and reports it as an estimate to verify.
+  Uncalibrated font rules are reported as `needs_review`, not false
+  "non_compliant".
+- `unit_sale_price` (MD-10) is effective-date sensitive (2021-2023 LMPC
+  amendments, repeatedly deferred); when not detected it is `not_applicable`
+  unless the caller passes `enforce_unit_sale_price` (then it is enforced).
 - These are single-face scans:  some "missing" declarations (consumer-care,
   mfg date, manufacturer address) live on the back panel of the same package
   and are genuinely absent from the imaged side -- a second photo would
   resolve them.
-- `unit_sale_price` (MD-10) is effective-date sensitive (2021-2023 LMPC
-  amendments, repeatedly deferred); when not detected it is reported as
-  `needs_review` unless the caller passes `enforce_unit_sale_price`.
+- Verdict semantics: `needs_review` rows with `evidence.kind == "referral"`
+  (placement PL-02/03/04, MRP qualifier not OCR-visible, unreadable font
+  zones) are *review notes*: they stay in the report but do not block a clean
+  `compliant` verdict. Font checks that ARE measurable and undersized still
+  produce `non_compliant`. Flip `config.MRP_QUALIFIER_OCR_MISS_KIND` to `""`
+  for strict enforcement of the MRP qualifier.
 - OCR artifacts that are now absorbed: reversed `MRP 20.00: = MRP`,
   `mre` for `MRP`, `Net Quantity: = 11kg` `=`-separators, nutrition-table
   "Approx." no longer mis-flags net-qty, toll-free `1800 22 4020` form,

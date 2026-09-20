@@ -1,4 +1,4 @@
-"""Download eng.traineddata for Tesseract into Sitara/tessdata (no admin needed).
+"""Download eng.traineddata for Tesseract into Compliance_Engine/tessdata (no admin needed).
 
 Tries several mirrors; verifies the result looks like a real tessdata file
 (size > 200 KB). Sets up the TESSDATA_PREFIX layout for the engine launchers

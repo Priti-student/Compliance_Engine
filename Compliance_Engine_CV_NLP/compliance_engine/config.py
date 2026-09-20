@@ -22,6 +22,16 @@ HIGH_GLARE_RATIO = 0.35
 LOW_OCR_CONFIDENCE = 45.0        # mean Tesseract word confidence below this
                                  # => text was not read reliably; advisory only
 
+# -----------------------------------------------------------------------------
+# Phase 7 - verdict tuning
+# -----------------------------------------------------------------------------
+# When OCR cannot *prove* a declaration aspect (it was not readable in the
+# photo, not that it is absent), the check is reported as a review note
+# ("referral") that does not block a clean 'compliant' verdict:
+#   * "referral" -> non-blocking review note (default)
+#   * ""         -> keep blocking (strict enforcement mode)
+MRP_QUALIFIER_OCR_MISS_KIND = "referral"
+
 # --- Phase 2: Preprocessing ----------------------------------------------------
 CLAHE_CLIP_LIMIT = 2.0
 CLAHE_TILE_GRID_SIZE = (8, 8)

@@ -6,9 +6,11 @@ and enforcement dashboards.**
 
 This repository (`Compliance_Engine/`) contains the entire **Sitara** project:
 the CV/OCR compliance engine, the web platform (backend + frontend), OCR
-language data, launchers and configuration. The only component that lives
-outside this folder is `engine_venv/` (the engine's Python environment), which
-the launchers reference via relative paths.
+language data, launchers and configuration. Both Python environments live
+**inside** this repository and are git-ignored: `platform/venv/` for the web
+platform and `Compliance_Engine_CV_NLP/venv/` for the CV/OCR engine. The
+launchers (`start_engine.bat`, `platform/scripts/start_engine.py`) resolve them
+via relative paths, so the repository is self-contained after cloning.
 
 ---
 
@@ -82,7 +84,8 @@ Compliance_Engine/
 │   │   ├── examples/  tests/  docs/  #   demo scripts, 75 tests, docs
 │   ├── rules/lmpc_rules_database.json#   digitized LMPC rule database
 │   ├── data/demo/                    #   sample reports + repository (engine demo)
-│   └── *.jpg / *.jpeg                #   sample product images (package_001 …, Lays, Wheet)
+│   ├── *.jpg / *.jpeg                #   sample product images (package_001 …, Lays, Wheet)
+│   └── venv/                         #   engine Python environment (Python 3.13, git-ignored)
 │
 ├── platform/                         # LMPC web platform (this team's deliverable)
 │   ├── backend/                      #   FastAPI service (:8001)
@@ -108,7 +111,7 @@ Compliance_Engine/
 │   │                                 #   start_platform, fetch_tessdata, smokes/probes
 │   ├── docs/                         #   ARCHITECTURE.md, DEPLOYMENT.md
 │   ├── storage_data/                 #   local object-storage fallback (images/artifacts)
-│   ├── venv/                         #   platform Python environment (Python 3.11)
+│   ├── venv/                         #   platform Python environment (Python 3.13)
 │   ├── requirements.txt
 │   ├── .env.example → .env           #   configuration (PostgreSQL, JWT, S3, engine URL)
 │   └── README.md                     #   platform-scoped readme (see also this file)
@@ -120,9 +123,10 @@ Compliance_Engine/
 └── engine_server.log / .err.log      # engine runtime logs
 ```
 
-<small>Outside this folder: `Sitara/engine_venv/` — the engine's Python runtime
-(kept outside intentionally; `start_engine.bat` and
-`platform/scripts/start_engine.py` resolve it as `..\engine_venv`).</small>
+<small>`Compliance_Engine_CV_NLP/venv/` — the engine's Python runtime, and
+`platform/venv/` — the platform's Python runtime, both kept **inside** the repo
+(git-ignored). The launchers resolve the engine interpreter as
+`%~dp0Compliance_Engine_CV_NLP\venv\Scripts\python.exe`.</small>
 
 ---
 
@@ -130,7 +134,7 @@ Compliance_Engine/
 
 | Layer | CV/OCR engine (`:8000`) | Platform (`:8001`) + UI (`:5173`) |
 |---|---|---|
-| Language | Python 3.11 (engine_venv) | Python 3.11 (platform/venv) |
+| Language | Python 3.13 (Compliance_Engine_CV_NLP/venv) | Python 3.13 (platform/venv) |
 | Web API | FastAPI + Uvicorn | FastAPI + Uvicorn |
 | Image / OCR | OpenCV 5.x, NumPy, scikit-image, imutils, Tesseract 5.x + pytesseract | Pillow (annotation, PDF images) |
 | NLP / extraction | regex declaration extractors (spaCy/BERT planned) | — (consumes engine output) |
@@ -180,7 +184,7 @@ path.
 | Tool | Notes |
 |---|---|
 | PostgreSQL 18 | running on `localhost:5432`, databases `lmpc_platform` (+ `lmpc_platform_test`) |
-| Python 3.11 | create venvs from the Store 3.11 interpreter (`py -3.11`) |
+| Python 3.13 | both venvs are created from it (`py -3.13`) |
 | Node / npm | 22 / 10 (frontend build & dev server) |
 | Tesseract OCR 5.x | `C:\Program Files\Tesseract-OCR\tesseract.exe`; language data in `tessdata/` |
 | Internet mirror | `files.pythonhosted.org` is blocked on some networks — pip uses the Tsinghua mirror (see READMEs) |
@@ -193,17 +197,17 @@ path.
 :: 1) Database (superuser; creates lmpc_platform + lmpc_platform_test)
 psql -U postgres -h localhost -f Compliance_Engine\platform\scripts\create_databases.sql
 
-:: 2) Platform Python environment (from Python 3.11)
-py -3.11 -m venv Compliance_Engine\platform\venv
+:: 2) Platform Python environment (from Python 3.13)
+py -3.13 -m venv Compliance_Engine\platform\venv
 Compliance_Engine\platform\venv\Scripts\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r Compliance_Engine\platform\requirements.txt
 
 :: 3) Configure
 copy Compliance_Engine\platform\.env.example Compliance_Engine\platform\.env
 ::    edit DATABASE_URL / JWT_SECRET / S3 keys as needed (kept out of git)
 
-:: 4) Engine Python environment (kept outside Compliance_Engine by design)
-py -3.11 -m venv engine_venv
-engine_venv\Scripts\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r Compliance_Engine\engine_requirements.txt
+:: 4) Engine Python environment (inside Compliance_Engine_CV_NLP\venv)
+py -3.13 -m venv Compliance_Engine\Compliance_Engine_CV_NLP\venv
+Compliance_Engine\Compliance_Engine_CV_NLP\venv\Scripts\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r Compliance_Engine\engine_requirements.txt
 
 :: 5) Tesseract OCR + English language data
 ::    install Tesseract 5.x (winget: UB-Mannheim.TesseractOCR)
@@ -297,7 +301,7 @@ Compliance_Engine\platform\venv\Scripts\python.exe Compliance_Engine\platform\sc
 cd Compliance_Engine\platform\frontend && npm run build
 
 :: Engine's own tests (per its README)
-cd Compliance_Engine\Compliance_Engine_CV_NLP && ..\..\engine_venv\Scripts\python.exe -m pytest compliance_engine\tests -q
+cd Compliance_Engine\Compliance_Engine_CV_NLP && venv\Scripts\python.exe -m pytest compliance_engine\tests -q
 ```
 
 Current status: platform suite **32/32 tests**, live E2E **24/24 checks**,

@@ -122,6 +122,19 @@ def extract_declarations(scan: ScanResult) -> List[DeclarationInfo]:
                 rule_id=_STRICT_FIELDS.get(field_name, {}).get("rule_id", ""),
             ))
 
+    # MD-05 refinement: the 'incl. of all taxes' qualifier may OCR outside the
+    # tight mrp zone (split tokens, zone-crop edge). When the full-image OCR
+    # contains the qualifier, attach that wider context to the mrp row so the
+    # validator can confirm it (the MRP *value* is still validated from the
+    # tight zone hit, never from the full text).
+    full_lower = full_text.lower()
+    if "incl" in full_lower or "inclusive of all taxes" in full_lower:
+        for d in declarations:
+            if (d.field_name == "mrp" and d.rule_id == "MD-05"
+                    and d.value
+                    and "incl" not in f"{d.value} {d.raw_text}".lower()):
+                d.raw_text = full_text[:_slice_width()]
+
     return declarations
 
 

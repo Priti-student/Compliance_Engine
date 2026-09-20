@@ -10,25 +10,25 @@ and a searchable product-repository.
 The CV/OCR engine (`Compliance_Engine_CV_NLP/`, sibling of this folder) is owned
 by a teammate and is consumed **read-only over HTTP** on port 8000 — this
 platform never modifies or imports it. Commands below run from the workspace
-root `Sitara/` unless `cd` says otherwise.
+root `Compliance_Engine/` unless `cd` says otherwise.
 
 ---
 
 ## 1. Components
 
 ```
-Sitara/
-├── Compliance_Engine/                 # everything moved inside here
-│   ├── Compliance_Engine_CV_NLP/      # teammate CV/OCR module (read-only)
-│   ├── platform/                      # THIS platform (backend + frontend)
-│   │   ├── backend/                   # FastAPI service (:8001)
-│   │   ├── frontend/                  # React + Tailwind + Recharts (:5173)
-│   │   ├── scripts/                   # seed, e2e, scans, launchers
-│   │   └── docs/                      # ARCHITECTURE.md, DEPLOYMENT.md
-│   ├── tessdata/                      # eng.traineddata for Tesseract (OCR)
-│   ├── start_engine.bat               # engine launcher (:8000)
-│   └── engine_requirements.txt        # deps for the engine venv
-└── engine_venv/                       # engine Python runtime (kept outside)
+Compliance_Engine/
+├── Compliance_Engine_CV_NLP/          # teammate CV/OCR module (read-only)
+│   └── venv/                          # engine Python environment (git-ignored)
+├── platform/                          # THIS platform (backend + frontend)
+│   ├── backend/                       # FastAPI service (:8001)
+│   ├── frontend/                      # React + Tailwind + Recharts (:5173)
+│   ├── scripts/                       # seed, e2e, scans, launchers
+│   ├── docs/                          # ARCHITECTURE.md, DEPLOYMENT.md
+│   └── venv/                          # platform Python environment (git-ignored)
+├── tessdata/                          # eng.traineddata for Tesseract (OCR)
+├── start_engine.bat                   # engine launcher (:8000)
+└── engine_requirements.txt            # deps for the engine venv
 ```
 
 ## 2. Prerequisites
@@ -36,7 +36,7 @@ Sitara/
 | Tool | Version used |
 |---|---|
 | PostgreSQL | 18.x running on localhost:5432 |
-| Python | 3.11 (Store) — create the venv from it |
+| Python | 3.13 (Store) — both venvs created from it |
 | Node / npm | 22 / 10 |
 | CV/OCR engine | optional for full scans; demo import works without it |
 
@@ -51,8 +51,8 @@ Sitara/
 psql -U postgres -h localhost -f Compliance_Engine\platform\scripts\create_databases.sql   # idempotent
 # (uses postgres user; override credentials in .env)
 
-# 2) Python environment (from Python 3.11)
-py -3.11 -m venv Compliance_Engine\platform\venv
+# 2) Python environment (from Python 3.13)
+py -3.13 -m venv Compliance_Engine\platform\venv
 Compliance_Engine\platform\venv\Scripts\python.exe -m pip install -r Compliance_Engine\platform\requirements.txt
 
 # 3) Configure
@@ -142,8 +142,8 @@ The engine repository is consumed **read-only over HTTP**. To enable real
 
 ```bat
 :: 1) One-off setup (already done on this machine)
-py -3.11 -m venv engine_venv                                                 :: workspace root
-engine_venv\Scripts\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r Compliance_Engine\engine_requirements.txt
+py -3.13 -m venv Compliance_Engine\Compliance_Engine_CV_NLP\venv
+Compliance_Engine\Compliance_Engine_CV_NLP\venv\Scripts\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r Compliance_Engine\engine_requirements.txt
 :: install Tesseract 5.x (winget: UB-Mannheim.TesseractOCR)
 :: download eng.traineddata into Compliance_Engine\tessdata\ :
 Compliance_Engine\platform\venv\Scripts\python.exe Compliance_Engine\platform\scripts\fetch_tessdata.py
@@ -158,9 +158,9 @@ curl http://127.0.0.1:8000/cv/health        :: opencv + tesseract versions
 curl http://127.0.0.1:8001/api/health       :: engine_online: true
 ```
 
-> `engine_venv` intentionally stays outside `Compliance_Engine` (per team
-> layout). `start_engine.bat` and `platform\scripts\start_engine.py` already
-> know where it is and where the tessdata folder lives.
+> The engine venv lives inside the repo at `Compliance_Engine_CV_NLP\venv`
+> (git-ignored). `start_engine.bat` and `platform\scripts\start_engine.py`
+> resolve it and set `TESSDATA_PREFIX` to `<repo>\tessdata` automatically.
 
 Any scan created from the platform UI now genuinely runs the engine pipeline:
 quality gate → OpenCV preprocessing → zone detection → Tesseract OCR →

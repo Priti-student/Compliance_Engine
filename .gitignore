@@ -1,0 +1,14 @@
+engine_server.err.log
+engine_server.log
+.vscode
+
+# --- Runtime scan data (engine reports/repository) - never commit -----------
+data/
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Local secrets ------------------------------------------------------------
+.env

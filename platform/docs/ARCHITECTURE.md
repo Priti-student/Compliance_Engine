@@ -21,7 +21,7 @@
 
 | Layer | Technology |
 |---|---|
-| Web API | Python 3.11 · FastAPI 0.141 · Uvicorn |
+| Web API | Python 3.13 · FastAPI (recent) · Uvicorn |
 | ORM / DB | SQLAlchemy 2.0 · PostgreSQL 18 (JSONB via variant; SQLite for tests) |
 | Auth | OAuth2 password flow · JWT (PyJWT) · PBKDF2-HMAC-SHA256 (600k iters) |
 | RBAC | Enforcement Officer / Reviewer / Admin via `require_roles(...)` dependency |

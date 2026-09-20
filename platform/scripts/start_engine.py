@@ -1,7 +1,8 @@
 """Start the CV/OCR compliance engine on 127.0.0.1:8000 (detached).
 
-Spawns uvicorn with the engine_venv interpreter, waits for /cv/health, prints
-the result, and exits — the engine process keeps running independently.
+Spawns uvicorn with the engine venv interpreter
+(Compliance_Engine_CV_NLP\\venv\\Scripts\\python.exe), waits for /cv/health,
+prints the result, and exits — the engine process keeps running independently.
 
 Usage:  platform\\venv\\Scripts\\python.exe scripts\\start_engine.py
         (any python that has httpx; reuse the platform venv)
@@ -15,9 +16,8 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parents[2]  # = repo root (Compliance_Engine/)
-PY = ROOT.parent / "engine_venv" / "Scripts" / "python.exe"
+PY = ROOT / "Compliance_Engine_CV_NLP" / "venv" / "Scripts" / "python.exe"
 ENGINE_DIR = ROOT / "Compliance_Engine_CV_NLP"
-LOG_CONFIG = ROOT.parent / "engine_venv" / "uvicorn_log_config.json"
 
 
 def main() -> int:
@@ -33,9 +33,7 @@ def main() -> int:
             "127.0.0.1",
             "--port",
             "8000",
-            "--log-config",
-            str(LOG_CONFIG),
-        ],
+            ],
         cwd=str(ENGINE_DIR),
         stdout=log,
         stderr=err,

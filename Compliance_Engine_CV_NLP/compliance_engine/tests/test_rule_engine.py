@@ -1,7 +1,8 @@
 """Phase 7 - rule engine & validator tests."""
 from compliance_engine.rules.rule_engine import RuleEngine, RuleContext, overall_status
 from compliance_engine.rules.rule_loader import Rule, load_all
-from compliance_engine.schema import DeclarationInfo, FontMetricInfo
+from compliance_engine.schema import (ComplianceStats, DeclarationInfo,
+                                      FontMetricInfo, Violation)
 
 
 def _rule(rule_id="R-1", field_name="x", logic=None, ref="Rule X"):
@@ -172,3 +173,59 @@ def test_mrp_validator_sees_label_in_raw_text():
     d = DeclarationInfo(field_name="mrp", value="100",
                         raw_text="NET WT 500 g MRP Rs.100 (incl. of all taxes)")
     assert format_regex_and_value_check(d, _rule(), RuleContext()) is None
+
+
+def test_overall_status_ignores_placement_referrals():
+    """PL-02/03/04 are informational review checkpoints and must NOT block a
+    clean 'compliant' verdict (regression: compliant was unreachable before)."""
+    stats = ComplianceStats(total_checks=3, needs_review=3)
+    violations = [
+        Violation(rule_id="PL-02", rule_reference="Rule 8(1)", field_name="x",
+                  status="needs_review", severity="low",
+                  evidence={"kind": "referral"}),
+        Violation(rule_id="PL-03", rule_reference="Rule 9(1)", field_name="x",
+                  status="needs_review", severity="low",
+                  evidence={"kind": "referral"}),
+        Violation(rule_id="PL-04", rule_reference="Rule 9(2)", field_name="x",
+                  status="needs_review", severity="low",
+                  evidence={"kind": "referral"}),
+    ]
+    assert overall_status(stats, violations) == "compliant"
+    # Legacy call without violations keeps the old (stricter) behaviour.
+    assert overall_status(stats) == "needs_review"
+
+
+def test_overall_status_substantive_review_still_blocks():
+    """A genuine needs_review (e.g. unverified MRP qualifier) still blocks."""
+    stats = ComplianceStats(total_checks=1, needs_review=1)
+    violations = [
+        Violation(rule_id="MD-05", rule_reference="Rule 6(1)(e)", field_name="mrp",
+                  status="needs_review", severity="low", evidence={}),
+    ]
+    assert overall_status(stats, violations) == "needs_review"
+    # Any violation/missing declaration overrides to non_compliant.
+    stats2 = ComplianceStats(total_checks=1, non_compliant=1, needs_review=1)
+    assert overall_status(stats2, violations) == "non_compliant"
+
+
+def test_unit_sale_price_default_not_applicable():
+    """MD-10 (repeatedly-deferred amendment) is N/A by default and only
+    becomes a real check when enforce_unit_sale_price metadata is passed."""
+    bundle = load_all()
+    engine = RuleEngine(bundle)
+    violations, stats = engine.evaluate(
+        [DeclarationInfo(field_name="mrp", value="20.00",
+                         raw_text="MRP Rs.20.00 incl of all taxes")],
+        [],
+        metadata={},
+    )
+    by_id = {v.rule_id: v for v in violations}
+    assert by_id.get("MD-10", "").status == "not_applicable"
+
+    violations2, _ = engine.evaluate(
+        [DeclarationInfo(field_name="mrp", value="20.00",
+                         raw_text="MRP Rs.20.00 incl of all taxes")],
+        [],
+        metadata={"enforce_unit_sale_price": True},
+    )
+    assert {v.rule_id: v.status for v in violations2}.get("MD-10") == "missing"

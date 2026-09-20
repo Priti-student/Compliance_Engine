@@ -2,7 +2,7 @@
 import os
 
 import numpy as np
-import pytest
+import pytest  # type: ignore[import-not-found]
 
 from compliance_engine.cv.font_metrics import (
     detect_barcode,
@@ -28,6 +28,20 @@ def test_barcode_detected_on_wheet():
 def test_no_barcode_found_on_package_001():
     img = load_image(os.path.join(_REPO_ROOT, "package_001.jpg"))
     assert detect_barcode(img) is None
+
+
+def test_ocr_barcode_estimate_on_product006():
+    """Product006 holds a small EAN-13 that cv2.barcode cannot decode; the
+    OCR-digit fallback must still produce a px->mm calibration from the
+    37.29 mm symbol reference (regression for 'barcode present but missed')."""
+    path = os.path.join(_REPO_ROOT, "Product006.jpeg")
+    if not os.path.exists(path):
+        pytest.skip("Product006.jpeg not present")
+    img = load_image(path)
+    cal = get_calibration(img)
+    assert cal.method in ("ean_upc_barcode", "ean_upc_barcode_ocr")
+    assert cal.mm_per_px > 0
+    assert cal.barcode_value
 
 
 def test_get_calibration_returns_mm_per_px_on_wheet():

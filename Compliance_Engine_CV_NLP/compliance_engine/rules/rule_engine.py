@@ -87,11 +87,13 @@ class RuleEngine:
                     and not ctx.metadata.get("enforce_unit_sale_price")):
                 violations.append(Violation(
                     rule_id=rule.rule_id, rule_reference=rule.rule_reference,
-                    field_name=rule.field_name, status="needs_review",
+                    field_name=rule.field_name, status="not_applicable",
                     severity="low",
                     reason="Unit sale price not detected; requirement is "
-                           "effective-date sensitive (LMPC 2021-2023 amendments) "
-                           "- verify or pass enforce_unit_sale_price",
+                           "effective-date sensitive (LMPC 2021-2023 amendments, "
+                           "repeatedly deferred) and is not being enforced for "
+                           "this scan - pass metadata "
+                           "enforce_unit_sale_price=true to enforce it",
                     evidence={},
                 ))
                 continue
@@ -139,6 +141,7 @@ class RuleEngine:
                 rule,
                 reason=f"Placement check requires manual/visual review ({rule.title})",
                 severity="low",
+                evidence={"kind": "referral"},
             ))
         return violations
 
@@ -207,10 +210,29 @@ def _summarize(violations: List[Violation]) -> ComplianceStats:
     return stats
 
 
-def overall_status(stats: ComplianceStats) -> str:
-    """Derive the headline compliance status from the violations."""
+def overall_status(stats: ComplianceStats,
+                   violations: Optional[List[Violation]] = None) -> str:
+    """Derive the headline compliance status from the violations.
+
+    Placement/manual-review referrals (PL-02/03/04) are *informational*
+    checkpoints: their validation_logic types (spacing / manual_flag / visual)
+    need a human to eyeball the physical package, and the engine emits them on
+    every scan by design. They stay visible in the report, but do not block a
+    clean 'compliant' verdict - otherwise a compliant verdict would be
+    unreachable for any scan. Pass `violations` so referrals can be told apart
+    from substantive needs_review items (an unverified MRP qualifier, an
+    uncalibrated font check, ...). When `violations` is omitted the legacy
+    behaviour (every needs_review row blocks) is preserved for direct callers.
+    """
+    if violations is not None:
+        blocking_review = sum(
+            1 for v in violations
+            if v.status == "needs_review" and v.evidence.get("kind") != "referral"
+        )
+    else:
+        blocking_review = stats.needs_review
     if stats.non_compliant == 0 and stats.missing == 0:
-        if stats.needs_review > 0:
+        if blocking_review > 0:
             return "needs_review"
         return "compliant"
     if stats.non_compliant > 0 or stats.missing > 0:

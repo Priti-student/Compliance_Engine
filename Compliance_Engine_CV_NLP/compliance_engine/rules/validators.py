@@ -13,6 +13,7 @@ used by cross-checking rules.
 import re
 from typing import Optional
 
+from compliance_engine import config
 from compliance_engine.schema import Violation
 
 _SEVERITY_MISSING = "high"
@@ -152,14 +153,16 @@ def format_regex_and_value_check(declaration, rule, ctx) -> Optional[Violation]:
             )
 
     # 'incl. of all taxes' qualifier: OCR may not have captured it even when
-    # printed -> flag for manual verification instead of a hard violation.
+    # printed -> review note, not a hard violation or a verdict blocker
+    # (see config.MRP_QUALIFIER_OCR_MISS_KIND).
     if "incl" not in text and "inclusive of all taxes" not in text:
         return Violation(
             rule_id=rule.rule_id, rule_reference=rule.rule_reference,
             field_name=rule.field_name, status="needs_review", severity="low",
             reason="MRP 'inclusive of all taxes' qualifier not visible in OCR; "
                    "verify on the physical label",
-            evidence={"value": declaration.value},
+            evidence={"value": declaration.value,
+                      "kind": getattr(config, "MRP_QUALIFIER_OCR_MISS_KIND", "referral")},
         )
     return None
 
@@ -259,12 +262,20 @@ def _font_metric_for(ctx, zone_type: str):
 def font_height_general_check(metric, rule, min_height_mm: float) -> Optional[Violation]:
     """Rule 7(3): general letter-height check from a measured font metric."""
     if metric is None or not metric.calibrated:
+        if metric is None or metric.char_height_px_median == 0.0:
+            reason = ("No readable characters in this zone for an automated "
+                      "font-size check; flagged for visual review")
+            kind = "referral"   # unreadable zone != violation; non-blocking
+        else:
+            reason = "Font height rule requires a calibrated mm-per-px reference"
+            kind = ""
         return Violation(
             rule_id=rule.rule_id, rule_reference=rule.rule_reference,
             field_name="font_size_and_legibility_rules.general_letter_height",
             status="needs_review", severity="medium",
-            reason="Font height rule requires a calibrated mm-per-px reference",
-            evidence={"char_height_px": metric.char_height_px_median if metric else 0.0},
+            reason=reason,
+            evidence={"char_height_px": metric.char_height_px_median if metric else 0.0,
+                      "kind": kind},
         )
     if metric.char_height_mm_median < min_height_mm:
         return Violation(
@@ -279,10 +290,11 @@ def font_height_general_check(metric, rule, min_height_mm: float) -> Optional[Vi
     return None
 
 
-def referral_violation(rule, reason: str, severity: str = "medium") -> Violation:
+def referral_violation(rule, reason: str, severity: str = "medium",
+                       evidence: Optional[dict] = None) -> Violation:
     return Violation(rule_id=rule.rule_id, rule_reference=rule.rule_reference,
                      field_name=rule.field_name, status="needs_review",
-                     severity=severity, reason=reason)
+                     severity=severity, reason=reason, evidence=evidence or {})
 
 
 REGISTRY = {
