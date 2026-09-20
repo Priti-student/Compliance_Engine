@@ -64,6 +64,13 @@ body {
   background-color: #064b35 !important;
 }
 
+/* Secondary actions, including report downloads, should signal hover by border only. */
+.forest-app button[class*="bg-white"][class*="hover:bg-"]:hover {
+  background-color: #fff !important;
+  border-color: #9bd7b7 !important;
+  box-shadow: inset 0 0 0 1px #9bd7b7;
+}
+
 .forest-app [class*="hover:text-blue-"]:hover { color: #08734c !important; }
 
 .forest-app [class*="focus:border-blue-"]:focus { border-color: #159765 !important; }
