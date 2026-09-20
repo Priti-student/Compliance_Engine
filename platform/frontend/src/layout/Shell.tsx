@@ -69,7 +69,7 @@ export default function Shell() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f8f6]">
+    <div className="forest-app min-h-screen bg-[#f5f8f6]">
 
       {/* =====================================================
           MOBILE TOP BAR

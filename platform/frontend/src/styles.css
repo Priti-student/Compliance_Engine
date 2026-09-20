@@ -22,6 +22,54 @@ body {
 
 .login-scene form svg { width: 1.4rem; height: 1.4rem; }
 
+/* Applies the LegalVision forest palette consistently to authenticated pages. */
+.forest-app [class*="text-blue-"],
+.forest-app [class*="text-[#0B3B82]"],
+.forest-app [class*="text-[#09265A]"] { color: #075a3f !important; }
+
+.forest-app [class*="bg-blue-"],
+.forest-app [class*="bg-[#0B3B82]"] { background-color: #08734c !important; }
+
+.forest-app [class*="bg-blue-50"] { background-color: #eff8f2 !important; }
+.forest-app [class*="bg-blue-100"] { background-color: #dcefe4 !important; }
+.forest-app [class*="bg-blue-200"] { background-color: #bfe2cd !important; }
+.forest-app [class*="bg-blue-400"],
+.forest-app [class*="bg-blue-500"],
+.forest-app [class*="bg-blue-600"] { background-color: #08734c !important; }
+.forest-app [class*="bg-blue-700"],
+.forest-app [class*="bg-blue-900"] { background-color: #064b35 !important; }
+
+.forest-app aside [class*="text-blue-"] { color: rgb(205 239 218 / 0.78) !important; }
+.forest-app aside [class*="bg-blue-"] { background-color: rgb(255 255 255 / 0.08) !important; }
+
+.forest-app [class*="border-blue-"] { border-color: #cce9d9 !important; }
+
+.forest-app [class*="shadow-blue-"] { --tw-shadow-color: rgb(6 75 53 / 0.16) !important; }
+
+.forest-app [class*="hover:bg-blue-"]:hover,
+.forest-app [class*="hover:bg-[#092F6B]"]:hover {
+  background-color: transparent !important;
+  border-color: #9bd7b7 !important;
+  box-shadow: inset 0 0 0 1px #9bd7b7;
+}
+
+.forest-app button[class*="hover:bg-"],
+.forest-app a[class*="bg-[#0B3B82]"][class*="hover:bg-"] {
+  border-color: transparent !important;
+  box-shadow: none;
+}
+
+.forest-app button[class*="hover:bg-"]:hover,
+.forest-app a[class*="bg-[#0B3B82]"][class*="hover:bg-"]:hover {
+  background-color: #064b35 !important;
+}
+
+.forest-app [class*="hover:text-blue-"]:hover { color: #08734c !important; }
+
+.forest-app [class*="focus:border-blue-"]:focus { border-color: #159765 !important; }
+
+.forest-app [class*="focus:ring-blue-"]:focus { --tw-ring-color: rgb(21 151 101 / 0.14) !important; }
+
 .card {
   @apply rounded-lg border border-emerald-100 bg-white shadow-sm;
 }

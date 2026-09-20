@@ -465,7 +465,7 @@ export default function DashboardPage() {
 
                 <Bar
                   dataKey="count"
-                  fill="#2563EB"
+                  fill="#064b35"
                   radius={[0, 6, 6, 0]}
                 />
 
@@ -554,14 +554,14 @@ export default function DashboardPage() {
 
                 <Bar
                   dataKey="scans"
-                  fill="#0B3B82"
+                  fill="#064b35"
                   radius={[5, 5, 0, 0]}
                   name="Scans"
                 />
 
                 <Bar
                   dataKey="violations"
-                  fill="#60A5FA"
+                  fill="#2d8b66"
                   radius={[5, 5, 0, 0]}
                   name="Violations"
                 />
