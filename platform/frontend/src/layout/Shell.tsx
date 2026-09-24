@@ -50,7 +50,7 @@ export default function Shell() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f5f8f6]">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-emerald-100 border-t-emerald-700" />
+          <div className="w-8 h-8 border-4 rounded-full animate-spin border-emerald-100 border-t-emerald-700" />
           <p className="text-sm text-slate-500">Loading…</p>
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function Shell() {
       {/* =====================================================
           MOBILE TOP BAR
       ====================================================== */}
-      <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-slate-200 bg-white px-4 shadow-sm lg:hidden">
+      <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 bg-white border-b shadow-sm border-slate-200 lg:hidden">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export default function Shell() {
         >
           {mobileOpen ? (
             <svg
-              className="h-5 w-5"
+              className="w-5 h-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -118,7 +118,7 @@ export default function Shell() {
             </svg>
           ) : (
             <svg
-              className="h-5 w-5"
+              className="w-5 h-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -151,7 +151,7 @@ export default function Shell() {
           <aside className="absolute left-0 top-0 flex h-full w-[280px] flex-col bg-[#032f22] text-white shadow-2xl">
 
             {/* Mobile sidebar header */}
-            <div className="border-b border-white/10 px-5 py-5">
+            <div className="px-5 py-5 border-b border-white/10">
 
               <div className="flex items-center justify-between">
 
@@ -176,11 +176,11 @@ export default function Shell() {
 
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white hover:bg-white/15"
+                  className="flex items-center justify-center text-white rounded-lg h-9 w-9 bg-white/10 hover:bg-white/15"
                   aria-label="Close navigation"
                 >
                   <svg
-                    className="h-5 w-5"
+                    className="w-5 h-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -203,7 +203,7 @@ export default function Shell() {
 
 
             {/* Navigation */}
-            <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
+            <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto">
 
               <p className="mb-3 px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-300/50">
                 Main Menu
@@ -241,7 +241,7 @@ export default function Shell() {
 
                       {isActive && (
                         <svg
-                          className="ml-auto h-4 w-4"
+                          className="w-4 h-4 ml-auto"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -263,19 +263,19 @@ export default function Shell() {
 
 
             {/* Mobile User */}
-            <div className="border-t border-white/10 p-4">
+            <div className="p-4 border-t border-white/10">
 
               <div className="rounded-2xl bg-white/[0.06] p-3">
 
                 <div className="flex items-center gap-3">
 
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-700 text-sm font-bold">
+                  <div className="flex items-center justify-center w-10 h-10 text-sm font-bold rounded-full shrink-0 bg-gradient-to-br from-blue-400 to-blue-700">
                     {user.full_name?.charAt(0)?.toUpperCase()}
                   </div>
 
                   <div className="min-w-0">
 
-                    <p className="truncate text-sm font-semibold">
+                    <p className="text-sm font-semibold truncate">
                       {user.full_name}
                     </p>
 
@@ -288,11 +288,11 @@ export default function Shell() {
                 </div>
 
                 <button
-                  className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 px-3 py-2.5 text-xs font-medium text-blue-200 transition hover:bg-white/10 hover:text-white"
+                  className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-[#9bd7b7] bg-white px-3 py-2.5 text-xs font-medium text-[#075a3f] transition hover:bg-[#eff8f2] hover:text-[#064b35]"
                   onClick={handleLogout}
                 >
                   <svg
-                    className="h-4 w-4"
+                    className="w-4 h-4"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -341,14 +341,14 @@ export default function Shell() {
         {/* =====================================================
             DESKTOP SIDEBAR
         ====================================================== */}
-        <aside className="hidden w-64 shrink-0 flex-col bg-[#032f22] text-white lg:flex">
+        <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col bg-[#032f22] text-white lg:flex">
 
           {/* Logo */}
-          <div className="border-b border-white/10 px-5 py-6">
+          <div className="px-5 py-6 border-b border-white/10">
 
             <div className="flex items-center gap-3">
 
-              <div className="relative h-10 w-10 shrink-0">
+              <div className="relative w-10 h-10 shrink-0">
                 <div className="absolute left-0 top-1 h-8 w-8 rounded-full bg-[#b6e878]" />
                 <div className="absolute left-3 top-1 h-8 w-8 rounded-full bg-[#16a56d]" />
               </div>
@@ -375,7 +375,7 @@ export default function Shell() {
 
 
           {/* Desktop Navigation */}
-          <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-5">
+          <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto">
 
             <p className="mb-3 px-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-300/50">
               Main Menu
@@ -397,7 +397,7 @@ export default function Shell() {
                 {({ isActive }) => (
                   <>
                     {isActive && (
-                      <span className="absolute left-0 h-7 w-1 rounded-r-full bg-white" />
+                      <span className="absolute left-0 w-1 bg-white rounded-r-full h-7" />
                     )}
 
                     <span
@@ -416,7 +416,7 @@ export default function Shell() {
 
                     {isActive && (
                       <svg
-                        className="ml-auto h-4 w-4"
+                        className="w-4 h-4 ml-auto"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -438,7 +438,7 @@ export default function Shell() {
 
 
           {/* Desktop User */}
-          <div className="border-t border-white/10 p-4">
+          <div className="p-4 border-t border-white/10">
 
             <div className="rounded-2xl bg-white/[0.06] p-3">
 
@@ -450,7 +450,7 @@ export default function Shell() {
 
                 <div className="min-w-0">
 
-                  <p className="truncate text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-white truncate">
                     {user.full_name}
                   </p>
 
@@ -458,7 +458,7 @@ export default function Shell() {
 
                     <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
 
-                    <p className="text-xs capitalize text-blue-300">
+                    <p className="text-xs text-blue-300 capitalize">
                       {user.role}
                     </p>
 
@@ -469,11 +469,11 @@ export default function Shell() {
               </div>
 
               <button
-                className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-blue-200 transition hover:bg-white/10 hover:text-white"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg border border-[#9bd7b7] bg-white px-3 py-2 text-xs font-medium text-[#075a3f] transition hover:bg-[#eff8f2] hover:text-[#064b35]"
                 onClick={handleLogout}
               >
                 <svg
-                  className="h-4 w-4"
+                  className="w-4 h-4"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -511,7 +511,7 @@ export default function Shell() {
         {/* =====================================================
             MAIN CONTENT
         ====================================================== */}
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="flex flex-col flex-1 min-w-0">
 
           {/* Desktop Header */}
           <header className="sticky top-0 z-20 hidden min-h-[72px] items-center justify-between border-b border-emerald-100 bg-white/95 px-6 backdrop-blur-md sm:flex xl:px-8">
@@ -532,11 +532,11 @@ export default function Shell() {
             {/* System Status */}
             <div className="flex items-center gap-3">
 
-              <div className="flex h-9 items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-4">
+              <div className="flex items-center gap-2 px-4 border rounded-full h-9 border-emerald-100 bg-emerald-50">
 
                 <span className="relative flex h-2.5 w-2.5">
 
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                  <span className="absolute inline-flex w-full h-full rounded-full animate-ping bg-emerald-400 opacity-60" />
 
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
 
@@ -554,7 +554,7 @@ export default function Shell() {
 
 
           {/* Mobile Status Bar */}
-          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-3 sm:hidden">
+          <div className="flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200 sm:hidden">
 
             <div>
               <p className="text-xs font-medium text-slate-500">
@@ -568,9 +568,9 @@ export default function Shell() {
 
             <div className="flex items-center gap-1.5">
 
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
+              <span className="relative flex w-2 h-2">
+                <span className="absolute inline-flex w-full h-full bg-blue-400 rounded-full animate-ping opacity-60" />
+                <span className="relative inline-flex w-2 h-2 bg-blue-500 rounded-full" />
               </span>
 
               <span className="text-[10px] font-medium text-blue-700">
@@ -587,7 +587,7 @@ export default function Shell() {
 
               Outlet is now visible on ALL screen sizes.
           ====================================================== */}
-          <main className="min-w-0 flex-1 overflow-x-hidden bg-slate-50 p-4 sm:p-6 xl:p-8">
+          <main className="flex-1 min-w-0 p-4 overflow-x-hidden bg-slate-50 sm:p-6 xl:p-8">
 
             <Outlet />
 
